@@ -1,0 +1,14 @@
+build/
+data/*.bin
+data/*.csr
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.idea/
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.bbl
+report/*.blg
