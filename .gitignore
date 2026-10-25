@@ -12,3 +12,4 @@ report/*.out
 report/*.toc
 report/*.bbl
 report/*.blg
+results_quick/

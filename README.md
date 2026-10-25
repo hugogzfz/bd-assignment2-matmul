@@ -44,7 +44,8 @@ make build          # gcc -O2 -std=c11 -ffp-contract=off  (+ three flag variants
 make inputs         # generates (or verifies against data/manifest.json) all dense and sparse inputs
 make test           # correctness suite -> results/correctness_tests.csv   (must report 0 failed)
 make vecinfo        # vectorisation evidence
-make bench          # all campaigns (many hours; resumable: the driver is called with --resume)
+make bench-quick    # reduced run (~3 min: dense n<=1000, sparse n=500) -> results_quick/, to check that everything works on your machine
+make bench          # the full campaigns of the report (several hours; resumable: the driver is called with --resume)
 make analyze        # tables + figures
 make report         # report/report.pdf
 ```

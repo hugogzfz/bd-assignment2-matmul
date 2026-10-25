@@ -14,7 +14,7 @@ SPARSE_SIZES  := 500 1000 2000
 DENSITIES     := 0.1 1 5 10 20 30 50 70 90
 STRUCTS       := unif band
 
-.PHONY: all build inputs test vecinfo bench bench-dense bench-flags bench-sparse analyze report clean
+.PHONY: all build inputs inputs-quick test vecinfo bench bench-quick bench-dense bench-flags bench-sparse analyze report clean
 
 all: build inputs test vecinfo bench analyze report
 
@@ -31,6 +31,10 @@ inputs:
 	$(PY) scripts/gen_inputs.py sparse --sizes 2000 4000 8000 16000 32000 64000 128000 --dens 0.1 --structs unif
 	$(PY) scripts/gen_inputs.py sparse --sizes 4000 8000 16000 32000 --dens 1 --structs unif
 
+inputs-quick:
+	$(PY) scripts/gen_inputs.py dense 100 250 500 512 1000
+	$(PY) scripts/gen_inputs.py sparse --sizes 500 --dens $(DENSITIES) --structs $(STRUCTS) --dense
+
 test: build
 	$(PY) scripts/test_correctness.py
 
@@ -38,6 +42,11 @@ vecinfo: build
 	$(PY) scripts/vec_evidence.py
 
 bench: bench-dense bench-flags bench-sparse
+
+# Reduced campaign (about 3 minutes): dense n<=1000 and sparse n=500, written to results_quick/ (does not touch results/).
+bench-quick: build inputs-quick
+	$(PY) scripts/run_benchmarks.py --campaign dense --sizes 100 250 500 512 1000 --bs $(BS) --results-dir results_quick
+	$(PY) scripts/run_benchmarks.py --campaign sparse --sizes 500 --bs $(BS) --results-dir results_quick
 
 bench-dense: build inputs
 	$(PY) scripts/env_info.py
