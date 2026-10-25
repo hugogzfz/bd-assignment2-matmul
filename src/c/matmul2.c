@@ -1,44 +1,8 @@
 /*
- * Big Data (ULPGC, 2026-2027) - Individual Assignment 2
- * Optimised dense multiplication and sparse (CSR) multiplication, C implementation.
- *
- * Methods (first command-line argument)
- *   ijk      baseline, textbook triple loop i-j-k with a scalar accumulator
- *            (kernel REUSED unchanged from Assignment 1, src/c/matmul.c)
- *   ikj      loop reordering i-k-j: the inner loop walks rows of B and C contiguously
- *   blocked  cache blocking (tiling) of i, k and j with one tile size `bs`; inside a tile
- *            the order is i-k-j; tiles are visited in the order ii, kk, jj
- *   csr      sparse CSR x CSR -> CSR (Gustavson row-wise algorithm with a dense
- *            accumulator, "SPA"). Inputs are DENSE files that are converted to CSR
- *            (the conversion is timed separately from the multiplication kernel).
- *   csrfile  same kernel, inputs are CSR files (no conversion)
- *
- * Accumulation order. For every element c_ij all methods add the products a_ik*b_kj
- * for k = 0..n-1 in increasing order, starting from 0.0, using IEEE-754 binary64
- * without fused multiply-add (compile with -ffp-contract=off). Blocking only splits
- * the k range into consecutive chunks that are processed in increasing order, and
- * the sparse kernel skips terms that are exactly zero (adding +0.0 never changes a
- * non-negative sum). Therefore all methods are expected to produce bit-for-bit
- * identical results; the test-suite and the benchmark driver check this.
- *
- * Timed region (identical rule for every method): the kernel reads the two input
- * operands and defines every element of the output. The C buffer of the dense methods
- * is allocated and page-touched OUTSIDE the timed region (as in Assignment 1); the
- * zero-fill that i-k-j and blocked need is INSIDE the kernel. The sparse kernel
- * allocates its workspace and its output arrays (size unknown in advance, grown with
- * realloc) INSIDE the timed region; freeing the output, the checksum, the file loading
- * and the dense->CSR conversion are outside (the conversion is timed on its own).
- *
- * Usage:
- *   matmul2 <method> <n> <reps> <warmup> <batch> <A> <B> <dumpC|-> [bs]
- * Output (stdout, one record per line, flushed immediately):
- *   META method=.. n=.. reps=.. warmup=.. batch=.. bs=..
- *   NNZ <nnzA> <nnzB>                         (sparse methods)
- *   RSS_AFTER_LOAD_KB <kB>
- *   WARMUP|REP <idx> <seconds per multiplication> <checksum> [conv_s=<s>] [nnz_c=<k>]
- *   ROWCHK <row> <nnz of row> <sum of row>    (sparse methods, spot-check rows)
- *   VMHWM_KB <kB>
- *   DONE
+ * Assignment 2 - dense (ijk baseline from Assignment 1, ikj, blocked) and sparse CSR multiplication.
+ * Usage: matmul2 <ijk|ikj|blocked|csr|csrfile> <n> <reps> <warmup> <batch> <A> <B> <dumpC|-> [bs]
+ * All methods add a_ik*b_kj for k increasing without FMA, so they return identical bits.
+ * Only the multiplication kernel is timed; the dense->CSR conversion is timed separately.
  */
 #define _POSIX_C_SOURCE 200809L
 #include <errno.h>

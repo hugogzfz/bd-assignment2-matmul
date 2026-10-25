@@ -1,33 +1,7 @@
 #!/usr/bin/env python3
-"""
-Generate the shared input matrices of Assignment 2.
-
-Two families of inputs (a SHA-256 manifest, data/manifest.json, lets anyone verify them):
-
-1. DENSE uniform matrices  (data/A_n<N>.bin, data/B_n<N>.bin)
-   Exactly the files of Assignment 1: raw little-endian binary64, row-major, n*n values,
-   numpy.random.default_rng([20261012, n, which]).random(n*n), which = 0 (A) / 1 (B),
-   uniform in [0, 1). For every size that Assignment 1 also used, the digest is compared
-   with data/a1_reference_sha256.json (the Assignment 1 manifest) -> byte-identical inputs.
-
-2. SPARSE matrices  (data/A_<struct>_n<N>_d<D>.{csr,bin}, same for B)
-   <struct>  unif : every row gets k ~ Binomial(n, d) nonzeros at uniformly random distinct
-                    columns (independent rows; expected density d)
-             band : a fully populated diagonal band, centred on the diagonal and clipped at the border;
-                    its width bw is chosen so that the entry count is closest to d*n*n
-   <D>       density in percent of NONZERO entries (sparsity = 100 - D percent zeros)
-   values    nonzero values are 1 - u with u uniform in [0, 1)  -> uniform in (0, 1], never 0
-   seed      numpy.random.default_rng([20261012, n, which, struct_code, round(10*D)])
-             (struct_code unif = 1, band = 2; which = 0 for A, 1 for B)
-   .csr      CSR file ("CSR1", int64 n, int64 nnz, int64 ptr[n+1], int32 idx[nnz], float64 val[nnz])
-   .bin      the same logical matrix as a dense binary64 file (only written with --dense)
-
-Usage:
-  gen_inputs.py dense  n1 n2 ...
-  gen_inputs.py sparse --sizes n1 n2 ... --dens 0.1 1 5 ... --structs unif band [--dense]
-The script verifies every regenerated file against the manifest and exits with status 1 if
-any digest differs (reference digests are never overwritten).
-"""
+"""Generates the input matrices (dense = the Assignment 1 files; sparse = random 'unif' or 'band', seeded)
+and checks every file against the SHA-256 digests in data/manifest.json.
+Usage: gen_inputs.py dense n1 n2 ...  |  gen_inputs.py sparse --sizes ... --dens ... --structs unif band [--dense]"""
 import argparse
 import hashlib
 import json

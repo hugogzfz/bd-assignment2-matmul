@@ -1,29 +1,6 @@
 #!/usr/bin/env python3
-"""
-Correctness tests for Assignment 2 (run BEFORE any benchmark).
-
-Dense methods  ijk (baseline) / ikj / blocked(bs)      sparse methods  csr / csrfile
-
-Dense tests    scalar, 2x2 (non-commutative), hand-computed 3x3, zero matrices, identity on the
-               left and on the right, all-ones, small integer matrices (exact), random matrices
-               versus NumPy (n not a multiple of the tile size included), bit-for-bit equality of
-               all dense methods, blocked with many tile sizes (1 ... larger than n).
-Sparse tests   empty matrices, identity, diagonal, empty rows/columns, fully dense matrix,
-               random uniform and banded matrices at several densities versus scipy.sparse
-               (identical nonzero pattern, relative error within the a-priori bound), sorted
-               column indices, csr (dense input) == csrfile (CSR input), densified sparse result
-               bit-for-bit equal to the dense baseline on the same logical matrices, spot-check
-               rows (ROWCHK) consistent with the dumped result.
-
-Tolerance for random data: all entries are non-negative, so for any summation order
-|c_hat - c| <= gamma_m * c with m <= n terms; two different orders differ by at most
-2*gamma_n*c (triangle inequality), gamma_n = n*u/(1-n*u), u = 2**-53. The accepted relative
-error is rtol = 2*gamma_n with atol = 0; exact zeros must be reproduced exactly.
-Integer-valued test matrices use small values, so every intermediate result is exactly
-representable and the comparison is exact (no tolerance).
-
-Output: results/correctness_tests.csv (one row per check). Exit status 1 if any check fails.
-"""
+"""Correctness tests (known answers, NumPy/SciPy references with tolerance 2*gamma_n, bitwise equality
+between methods, sparse edge cases). Writes results/correctness_tests.csv; exit status 1 on any failure."""
 import csv
 import os
 import subprocess

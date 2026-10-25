@@ -1,34 +1,6 @@
 #!/usr/bin/env python3
-"""
-Benchmark driver for Individual Assignment 2 (optimised dense methods and sparse CSR).
-
-One *run* = one operating-system process executing one (method, input) configuration:
-warm-up samples (discarded from the statistics, kept in the CSV) followed by measured samples.
-Every sample is the time of ONE multiplication (for tiny inputs a batch of multiplications is timed
-and divided by the batch size). The protocol is the one of Assignment 1:
-
-  budgets   T_MULT  300 s  : maximum wall time of one timed sample; longer -> run killed, status "timeout"
-            MEM_KIB 4 GiB  : maximum resident memory (polled every 0.5 s, plus RLIMIT_AS); exceeded ->
-                             status "memory_limit". Both are results, no execution time is invented.
-  repeats   t_est <= 1 s : 3 warm-up + 10 measured | <= 30 s : 1 + 5 | <= 120 s : 0 + 3 | else 0 + 2
-  batching  t_est < 50 ms : a batch of ceil(0.1 s / t_est) multiplications is timed and divided by the batch
-  order     size-major (for each size every configuration), so slow machine drift hits all methods alike
-  failures  a series (same method/structure/density, growing n) stops after its first timeout / memory failure
-
-Campaigns
-  dense    baseline ijk, ikj, blocked on the Assignment 1 uniform inputs, declared size sequence   (Part A)
-  bsweep   tile-size sweep of the blocked method at n = 1500 (a size NOT used in the comparison)     (Part A)
-  flags    SUPPLEMENTARY: compiler options (-O2, -O2 -funroll-loops, -O3, -O3 -march=native)         (Part A)
-  procvar  SUPPLEMENTARY: between-process variability at n = 1000 (run with --tag 1..k)
-  sparse   CSR x CSR (with the dense->CSR conversion timed separately) and dense methods on MATCHED
-           logical inputs: sizes x structures x densities                                            (Part B)
-  scale    sparse-only scaling with CSR inputs until the time / memory budget is reached              (Part B)
-
-Correctness (every run): the final product is dumped and checked against NumPy (dense) or SciPy (sparse);
-accepted relative error 2*gamma_n, gamma_n = n*u/(1-n*u), u = 2**-53 (entries are non-negative, so the error of
-any summation order is <= gamma_n * c). Exact zeros must be reproduced exactly; the nonzero pattern of the sparse
-result must equal SciPy's. Spot-check rows (ROWCHK) are verified for every sparse run, also when no full dump exists.
-"""
+"""Benchmark driver: one process per (method, input), warm-up + measured samples, 300 s / 4 GiB budgets,
+and validation of every result against NumPy/SciPy. Campaigns: dense, bsweep, flags, procvar, sparse, scale."""
 import argparse
 import csv
 import datetime

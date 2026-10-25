@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
-"""
-Analysis of the raw measurements of Assignment 2: summary CSVs, LaTeX tables and figures.
-
-Input : results/runs.csv, results/raw_measurements.csv (written by run_benchmarks.py), data/*.csr (flop counts)
-Output: results/summary_*.csv, report/tables/*.tex, figures/fig*.pdf|png
-
-Statistics: median and inter-quartile range (Q3 - Q1, linear interpolation as NumPy's default) of the measured
-samples of one run (warm-up samples are excluded). Speed-up = median(baseline) / median(method) at the same n.
-Nothing in this script measures anything; every number comes from the CSV files.
-"""
+"""Summary CSVs, LaTeX tables and figures from results/runs.csv and results/raw_measurements.csv
+(median and IQR of the measured samples; warm-ups excluded)."""
 import json
 import math
 import os
@@ -73,7 +65,6 @@ def pct(x, k=3):
 
 def save_fig(fig, name):
     fig.savefig(FIG / (name + ".pdf"))
-    fig.savefig(FIG / (name + ".png"), dpi=150)
     plt.close(fig)
 
 
@@ -457,9 +448,16 @@ def sparse_part(runs):
             ax.plot(x, g.t_csr, marker=MK["csr"], ms=4, lw=1.4, color=COL["csr"], label="CSR kernel")
             ax.plot(x, g.t_csr + g.t_conv, marker=MK["csr"], ms=3, lw=1.0, ls="--", color=COL["csr"], mfc="none",
                     label="CSR kernel + dense$\\to$CSR conversion")
-            for m in ("ikj", "blocked", "ijk"):
-                if "t_" + m in g and g["t_" + m].notna().any():
-                    ax.plot(x[g["t_" + m].notna()], g["t_" + m].dropna(), marker=MK[m], ms=4, lw=1.2, color=COL[m], label=LAB[m])
+            # dense methods do not depend on the density: show only the best one as a reference band
+            lo, med, hi = g.t_dense_best.min(), g.t_dense_best.median(), g.t_dense_best.max()
+            ax.axhspan(lo, hi, color=COL["blocked"], alpha=0.18, lw=0)
+            ax.axhline(med, color=COL["blocked"], lw=1.4, label="best dense method (median and range over $d$)")
+            bk = [b["breakeven_density_pct"] for b in be if b["n"] == n and b["structure"] == struct
+                  and b["boundary"] == "kernel only" and b["breakeven_density_pct"]]
+            if bk:
+                ax.axvline(bk[0], color=MUTED, lw=0.9, ls=":")
+                ax.text(bk[0] * 0.85, med * 1.6, "break-even\n$d\\approx%.0f$%%" % bk[0], ha="right", va="bottom",
+                        fontsize=7, color=INK)
             ax.set_xscale("log"); ax.set_yscale("log")
             ax.set_title("n=%d, %s nonzeros" % (n, "uniformly random" if struct == "unif" else "banded"))
             if i == len(sizes) - 1:
@@ -467,6 +465,8 @@ def sparse_part(runs):
             if j == 0:
                 ax.set_ylabel("time per multiplication (s)")
     axes[0][0].legend(frameon=False, fontsize=6.8, loc="lower right")
+    for a in axes.flat:
+        a.set_ylim(top=60)
     save_fig(fig, "fig7_sparse_vs_dense")
 
     fig, axes = plt.subplots(1, 2, figsize=(7.0, 3.2))
