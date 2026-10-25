@@ -1,0 +1,42 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\captionsetup{font=small,labelfont=bf}
+\setlist{itemsep=2pt,topsep=3pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{4em}
+\newcommand{\repourl}{\url{https://github.com/hugogzfz/bd-assignment2-matmul}}
+
+\title{\textbf{Assignment 2: Optimised Dense Matrix Multiplication\\and Sparse Matrices in C}}
+\author{Hugo Gonz\'alez Fern\'andez\\[2pt]
+Big Data \,$\cdot$\, Bachelor’s Degree in Data Science and Engineering\\
+Universidad de Las Palmas de Gran Canaria\\
+Academic year 2026--2027 \,$\cdot$\, Individual Assignment 2\\[2pt]
+Code repository: \repourl}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent\textbf{Question.} How much do loop reordering and cache blocking speed up the basic dense $n\times n$ \texttt{float64} product in sequential C, and for which sizes, densities and nonzero structures does an own CSR$\times$CSR
+multiplication beat the dense methods once conversion and output costs are included? \textbf{Method.} The Assignment~1 i-j-k baseline, an i-k-j version and a blocked version (tile $96$) read identical inputs and perform bit-identical arithmetic; a Gustavson-style CSR kernel is compared with them on the same logical matrices
+(random and banded, $0.1$--$90\%$ nonzeros, $n=500$--$2000$) and scaled with CSR inputs to $n=64000$. Monotonic timers, warm-up, $2$--$10$ samples, median and IQR, budgets of $300$\,s and $4$\,GiB, validation against NumPy/SciPy and $377$ correctness checks.
+\textbf{Results.} i-k-j is $1.5$--$6.9\times$ and blocked up to $9.9\times$ faster than the baseline; blocking pays only for $n\gtrsim1250$ ($1.4$--$1.7\times$ over i-k-j); the largest feasible dense size doubles from $3000$ to $6000$. The CSR kernel is $10^2$--$10^5\times$ faster for $d\le1\%$, $2$--$3\times$ at $50\%$ and slower
+above a break-even of about $70$--$85\%$; conversion removes most of the advantage at high sparsity and products of random matrices fill in after a few percent; at equal density banded inputs run $15\times$ faster than random ones. \textbf{Scope.} One virtual machine, between-process variability of $13$--$35\%$, no hardware counters: conclusions apply to these implementations and settings only.
+\end{abstract}
+
+\input{sec_intro_method}
+\input{sec_results}
+\input{sec_discussion}
+
+\end{document}

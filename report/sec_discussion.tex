@@ -1,0 +1,95 @@
+\section{Discussion}
+
+\subsection{Answers to the research questions}
+
+\paragraph{Q-A (dense optimisations).} With identical inputs, arithmetic, timing boundary and a single thread, reordering the loops to i-k-j makes the C baseline $1.5$--$1.7\times$ faster for $n\le500$, $2$--$2.3\times$ at $n=750$--$1000$ and $3.7$--$6.9\times$
+for $n\ge1024$; blocking with $b=96$ adds nothing up to $n=1000$ and a further $1.4$--$1.7\times$ over i-k-j for $n\ge2000$, giving up to $9.9\times$ over the baseline at $n=2048$ (Table~\ref{tab:dense}, Figure~\ref{fig:speed}). The optimised kernels cost
+$0.64$--$0.89$\,ns (i-k-j, $n\le1250$) or $0.68$--$0.85$\,ns (blocked, all sizes) per multiply--add and keep a near-cubic growth ($k=3.04\pm0.07$ for blocked), whereas the baseline's cost per multiply--add grows from $1.1$ to $8.0$\,ns. As a consequence the largest feasible size under the same budget moves from $3000$ to $6000$.
+The speed-up numbers are bounded by the baseline's irregular behaviour (spikes at $512$ and $1024$): they should be read as ``at these sizes'' and not as a smooth law.
+
+\paragraph{Q-B (sparse versus dense).} For inputs with $0.1$--$50\%$ nonzeros the own CSR$\times$CSR kernel is faster than the best dense method on the same matrices, by $10^5\times$ at $d=0.1\%$ (kernel only), $2\cdot10^2$--$4\cdot10^3\times$ at $1\%$ and $2$--$3\times$ at $50\%$; it is slower from a break-even density of about $72$--$87\%$ (precisely: $72$--$76\%$ at $n=2000$; $82$--$87\%$ at $n=500$ and $1000$, resolved to about $\pm10$ points).
+The end-to-end advantage of the whole pipeline starting from dense matrices is limited by the dense$\to$CSR conversion ($O(n^2)$ and independent of $d$ to first order): at $n=1000$, $d=0.1\%$ it is $155\times$ instead of $10^5\times$. And the product of random sparse matrices is dense long before the inputs are: at $n=1000$, $d=5\%$ gives a $92\%$-dense $C$, and then
+the cost per useful product ($9.7$\,ns at $5\%$, $30$\,ns at $1\%$) is $14$--$43\times$ that of a dense multiply--add ($0.7$\,ns; Table~\ref{tab:nsflop}). \emph{Where sparse helps}: very sparse inputs, banded or otherwise structured inputs whose product stays sparse, and inputs that are already stored in CSR. \emph{Where it stops helping}: dense outputs, inputs above $\approx70$--$80\%$ density, and
+workloads that must convert from dense each time.
+
+\paragraph{Separating the effects.} The optimisation effect (Part~A) was obtained with dense inputs, where the number of operations is fixed at $n^3$: changing the loop order or blocking changed the time by up to $9.9\times$ and nothing else. The storage and structure effect (Part~B) is of a different kind: it changes the \emph{number} of operations (from $n^3$ to $\approx d^2n^3$ useful products for random inputs),
+by up to $10^5\times$, while the time per operation \emph{increases} ($1$ to $30$\,ns per product instead of $0.7$\,ns). The two are not additive: here the comparator in Part~B is the best optimised dense method, not the baseline; against the baseline all sparse speed-ups would be about $2\times$ ($n=1000$) to $6\times$ ($n=2000$) larger (baseline column of the tables). Also the
+third factor, the \emph{compiler}, matters: with \texttt{-O3 -march=native} the dense blocked kernel became $3.3\times$ faster at $n=2000$, which would move the break-even density of Part~B down (the sparse kernel was not recompiled in the same comparison, so this is only an expectation).
+
+\paragraph{Percentage of zeros is not enough.} At the same $d=1\%$ and $n=1000$, banded inputs run $15\times$ faster than random ones, produce a product $5\times$ sparser ($1.9\%$ versus $9.4\%$), and have $15\times$ lower cost per useful product. A statement such as ``a matrix with $99\%$ zeros is fast'' is therefore false in general: it depends on the pattern,
+on the product's fill-in, on the format, on whether conversion is needed and on the implementation of the kernel.
+
+\subsection{Hypotheses}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}p{0.6cm}p{3.1cm}p{10.2cm}@{}}
+\toprule
+ & Verdict & Evidence \\
+\midrule
+H1 & supported & i-k-j is $1.45$--$6.9\times$ faster than i-j-k at every size; gain grows with $n$ but not monotonically; no spikes at $512$/$1024$. \\
+H2 & partly supported & No gain of blocking for $n\le1000$ (as expected); a gain of $1.38$--$1.66\times$ for $n\ge2000$. The predicted bound ``$\lesssim1.5\times$'' is exceeded at $n=2000$ ($1.66\times$) and respected elsewhere. \\
+H3 & supported & identical SHA-256 of $C$ in all $69$ groups; all tile sizes tested bit-for-bit equal. \\
+H4 & supported, with a precise break-even & $10^5\times$ at $d=0.1\%$ down to $0.6$--$0.9\times$ at $90\%$; break-even $72$--$87\%$; random products fill in as $1-e^{-nd^2}$, banded ones stay banded. \\
+H5 & supported & conversion is $92$--$99.9\%$ of the end-to-end time for banded inputs with $d\le1\%$; random $d=1\%$: $53$--$82\%$. \\
+H6 & supported & dense: $24.00$ bytes per $n^2$; CSR: model within $1\%$ of the measured RSS at the largest scaling sizes. \\
+\bottomrule
+\end{tabular}
+\caption{Predictions declared in the introduction against the results.}
+\end{table}
+
+\subsection{Strength of the evidence}
+\begin{itemize}
+  \item \textbf{Strong:} the ordering baseline $\ll$ i-k-j $\lesssim$ blocked for $n\ge2000$ (ratios $>3\times$ against samples whose IQR is at most $14\%$ of the median); the correctness of all results; the memory formulas; the orders of magnitude of the sparse advantage at low density, and the fact that it is reversed at $90\%$ for $n=2000$.
+  \item \textbf{Moderate:} the break-even densities for $n\le1000$ (the speed-up is within $\pm15\%$ of $1$ over the last two densities); exponents (few points); the choice $b=96$ (flat landscape).
+  \item \textbf{Weak or hypothesis:} all explanations in terms of caches, TLB, SIMD units or \texttt{realloc}; they are consistent with the data (e.g.\ the vectorisation evidence and the compiler experiment for SIMD) but no hardware counters were available. For the baseline's spikes at powers of two a cache-associativity conflict is the usual explanation \cite{drepper,hennessy}; this study neither tests nor excludes it.
+\end{itemize}
+
+\subsection{Limitations}
+\begin{itemize}
+  \item \textbf{One machine.} A virtual machine with $2$ vCPUs, $8$\,GiB, shared host, unpinned, no visible frequency governor. Between-process variability reaches $13$--$35\%$ at $n=1000$; with $2$--$5$ samples at large $n$ the medians are less certain than the IQR suggests. Results are \emph{not} from the author's laptop and would differ in absolute terms there.
+  \item \textbf{Few samples at the largest sizes} (budget rule): baseline $n=3000$ has $2$ samples; $4000$--$6000$ have $2$--$3$; the sparse scaling has $5$.
+  \item \textbf{Implementation scope.} One sparse format (CSR) and one algorithm (Gustavson with a dense accumulator); no comparison with a library (SciPy was used only to validate), no CSC/COO, no tuned sort. A faster sparse kernel would move the break-even; a library dense kernel (BLAS) would very likely be faster than all three dense methods and would move it down.
+  \item \textbf{Inputs.} Two structures only (random and banded) and positive values; real matrices (power-law degree, block structure) may behave differently. Matched comparisons only up to $n=2000$; the baseline is run on only two cells at $n=2000$.
+  \item \textbf{Exploratory decisions.} A pilot at $n=1500$ and a smoke test at $n=500$ were seen before the hypotheses were fixed; the densities $70\%$ and $90\%$, the compiler experiment and the variability experiment were added after those looks. The tile was chosen on the same machine at a size outside the comparison.
+  \item \textbf{Scaling runs} use CSR files, so they exclude conversion by design, and only random patterns.
+\end{itemize}
+
+\section{Conclusions}
+\begin{enumerate}
+  \item On dense $n\times n$ \texttt{float64} matrices in sequential C at \texttt{-O2}, the i-j-k baseline loses to i-k-j by $1.5\times$ to $6.9\times$, and to the blocked method ($b=96$) by up to $9.9\times$; blocking only pays beyond $n\approx1250$, where it adds $1.4$--$1.7\times$ over i-k-j. The largest feasible size within $300$\,s doubles, from $3000$ to $6000$. Results are bit-identical.
+  \item Cost per multiply--add: $0.64$--$0.89$\,ns (i-k-j) and $0.68$--$0.85$\,ns (blocked) against $1.1$--$8.0$\,ns (baseline); exponent $3.04\pm0.07$ (blocked).
+  \item The own CSR$\times$CSR kernel is $10^2$--$10^5\times$ faster than the best dense method for $d\le1\%$, still $2$--$3\times$ at $50\%$, and slower above a break-even density of about $70$--$85\%$ on this machine; a dense$\to$CSR conversion removes most of the advantage at high sparsity, and random products become dense after a few percent of input density.
+  \item The percentage of zeros alone does not predict performance: at $1\%$, banded inputs are $15\times$ faster than random ones.
+  \item With CSR inputs, $n=64000$ ($d=0.1\%$) and $n=16000$ ($d=1\%$) are feasible in $14$\,s and $4.3$\,s within $3$\,GiB; the next sizes were excluded by predicted memory ($>12$\,GiB), and no run failed. Dense matrices of $n=64000$ would need $98$\,GB.
+  \item A compiler flag (vectorisation) had an effect comparable to or larger than the algorithmic changes in the dense part ($3.3\times$ for the blocked kernel at $n=2000$); this should be kept in mind when the next assignment adds vectorisation and parallelism.
+\end{enumerate}
+
+\section{Use of generative AI}
+In line with the course policy, the use of AI is disclosed: the tool was \textbf{Claude (Anthropic)}. It was used for planning the experimental design, writing the C implementations, the input generator, the benchmark driver, the test, analysis and plotting scripts, the supplementary experiments and a first draft of this report.
+The affected parts are \texttt{src/}, \texttt{scripts/} and \texttt{report/}. The author is responsible for understanding the code, validating the measurements, checking the references and defending the conclusions; generated text is not evidence, and every number in this report was produced by the included code
+from the raw data in \texttt{results/}.
+
+\section{Reproducibility materials}
+\label{sec:materials}
+Source code, build and run instructions, raw measurements, input-generation scripts and analysis scripts are in the repository \repourl{} and in \path{Assignment02_GonzalezFernandez_Materials.zip}. The \texttt{README.md} gives the exact commands
+(\texttt{make build inputs test bench analyze report}); the input matrices are not stored (about $5$\,GB) but regenerated with \texttt{scripts/gen\_inputs.py} and verified against the SHA-256 digests in \texttt{data/manifest.json}; the dense inputs are identical to those of Assignment~1 (\texttt{data/a1\_reference\_sha256.json}).
+Raw data: \path{results/raw_measurements.csv} (one row per sample, warm-up included) and \path{results/runs.csv} (one row per process); environment: \path{results/environment.json}; every figure and table is generated by \path{scripts/analyze.py}. The measurement driver reads \texttt{/proc} and therefore needs Linux;
+the full campaign took several hours on the reported machine. The baseline kernel is that of Assignment~1 \cite{a1}, whose structure was taken from the example implementations on the course website \cite{course}; all other code, the driver, validation, supplementary experiments and analysis were written for this study with the AI assistance disclosed above.
+No other external code, text or figures are reused.
+
+\begin{thebibliography}{99}
+\bibitem{a1} H.~Gonz\'alez Fern\'andez, ``Assignment 1: How runtime and memory scale in the basic triple-loop matrix multiplication in C, Java and Python,'' Big Data, Univ. Las Palmas de Gran Canaria, Oct. 2026. Code: \url{https://github.com/hugogzfz/bd-assignment1-matmul}, commit 101af1c.
+\bibitem{course} ``Ejemplos'' (matrix-multiplication examples in Python, Java, Rust and C), \emph{Big Data} course website, Block~1, Complexity Management. \url{https://mltechdrawer.github.io/BIGDATA/Block1_Theoretical_Concepts_of_Big_Data/Complexity_Management/codigos/}. Accessed: Oct.~14, 2026.
+\bibitem{lam} M.~D.~Lam, E.~E.~Rothberg and M.~E.~Wolf, ``The cache performance and optimizations of blocked algorithms,'' in \emph{Proc. 4th Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS IV)}, Santa Clara, CA, USA, 1991, pp.~63--74.
+\bibitem{goto} K.~Goto and R.~A.~van de Geijn, ``Anatomy of high-performance matrix multiplication,'' \emph{ACM Trans. Math. Softw.}, vol.~34, no.~3, Art.~no.~12, May 2008.
+\bibitem{gustavson} F.~G.~Gustavson, ``Two fast algorithms for sparse matrices: Multiplication and permuted transposition,'' \emph{ACM Trans. Math. Softw.}, vol.~4, no.~3, pp.~250--269, Sep. 1978.
+\bibitem{saad} Y.~Saad, \emph{Iterative Methods for Sparse Linear Systems}, 2nd~ed. Philadelphia, PA, USA: SIAM, 2003.
+\bibitem{drepper} U.~Drepper, ``What every programmer should know about memory,'' Red~Hat, Inc., Nov. 2007.
+\bibitem{hennessy} J.~L.~Hennessy and D.~A.~Patterson, \emph{Computer Architecture: A Quantitative Approach}, 6th~ed. Cambridge, MA, USA: Morgan Kaufmann, 2017.
+\bibitem{higham} N.~J.~Higham, \emph{Accuracy and Stability of Numerical Algorithms}, 2nd~ed. Philadelphia, PA, USA: SIAM, 2002.
+\bibitem{goldberg} D.~Goldberg, ``What every computer scientist should know about floating-point arithmetic,'' \emph{ACM Comput. Surv.}, vol.~23, no.~1, pp.~5--48, Mar. 1991.
+\bibitem{georges} A.~Georges, D.~Buytaert and L.~Eeckhout, ``Statistically rigorous Java performance evaluation,'' in \emph{Proc. 22nd ACM SIGPLAN Conf. Object-Oriented Programming Systems, Languages and Applications (OOPSLA)}, Montreal, Canada, 2007, pp.~57--76.
+\bibitem{hoefler} T.~Hoefler and R.~Belli, ``Scientific benchmarking of parallel computing systems: Twelve ways to tell the masses when reporting performance results,'' in \emph{Proc. Int. Conf. High Performance Computing, Networking, Storage and Analysis (SC '15)}, Austin, TX, USA, 2015, Art.~no.~73.
+\bibitem{numpy} C.~R.~Harris \emph{et al.}, ``Array programming with NumPy,'' \emph{Nature}, vol.~585, pp.~357--362, 2020, doi: 10.1038/s41586-020-2649-2.
+\bibitem{scipy} P.~Virtanen \emph{et al.}, ``SciPy 1.0: Fundamental algorithms for scientific computing in Python,'' \emph{Nature Methods}, vol.~17, pp.~261--272, 2020, doi: 10.1038/s41592-019-0686-2.
+\end{thebibliography}

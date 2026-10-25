@@ -1,0 +1,175 @@
+\section{Introduction and objective}
+
+Assignment~1 \cite{a1} measured the basic triple-loop multiplication in C, Java and Python and found that, even though the
+operation count is exactly $n^3$, the \emph{time per multiply--add} grows with $n$: in C it rose from about $1.0$--$1.4$\,ns for
+$n\le1000$ to $6.8$\,ns at $n=3000$, and $n=512$ and $1024$ were slower than their neighbours. That was attributed (as a hypothesis, not
+measured) to the strided walk down the columns of $B$. This study keeps the \emph{same C baseline, the same input matrices and the same
+machine class} and asks two questions about what can be done about it.
+
+\paragraph{Research questions.}
+\begin{enumerate}
+  \item[\textbf{Q-A}] \emph{How much do two sequential optimisations of the dense $n\times n$ \texttt{float64} product (loop reordering
+        i-k-j, and cache blocking) reduce the runtime of the basic i-j-k baseline as $n$ grows, when all three methods use the same inputs,
+        numeric type, arithmetic and timing boundary?}
+  \item[\textbf{Q-B}] \emph{For which matrix sizes, densities (percentage of nonzero entries) and nonzero structures does a
+        CSR$\times$CSR sparse multiplication beat the dense methods on the same logical matrices, and how large are the costs of format
+        conversion and of the (possibly denser) output?}
+\end{enumerate}
+
+\paragraph{Factors and outcomes.} Q-A: factor = method (3 levels) and size $n$; Q-B: factor = method (sparse versus dense), $n$, density $d$ and
+structure (random versus banded). Outcomes: time of one multiplication (kernel only, plus the separately timed conversion), peak resident
+memory, and the number of nonzeros of the product. Everything is sequential and single-threaded; parallel and vectorised variants belong to
+Assignment~3.
+
+\paragraph{Hypotheses (predictions).} Formulated after a short pilot at $n=1500$ (used only to choose the tile size, see
+Section~\ref{sec:bs}) and a smoke test of the driver at $n=500$, and \emph{before} the main measurements were analysed.
+\begin{enumerate}
+  \item[H1] i-k-j is faster than i-j-k, and the gain grows with $n$, because its inner loop walks $B$ and $C$ with unit stride while i-j-k
+        walks a column of $B$ with stride $8n$ bytes.
+  \item[H2] Blocking gives a further gain over i-k-j only once the matrices no longer fit in the caches; because the kernels are scalar
+        (no SIMD at \texttt{-O2}), the extra gain is expected to be modest ($\lesssim1.5\times$).
+  \item[H3] The three dense methods produce \emph{bit-for-bit identical} results, since each $c_{ij}$ accumulates the same products in the
+        same order (blocking only splits the $k$ range into consecutive chunks).
+  \item[H4] CSR$\times$CSR is much faster than the dense methods at high sparsity because its work is proportional to the number of useful
+        products ($\approx d^2n^3$ for random inputs) and not to $n^3$; the advantage shrinks as $d$ grows because of indirect indexing, and a
+        break-even density exists. For random inputs the product fills in quickly ($\text{nnz}(C)/n^2\approx1-e^{-nd^2}$), whereas a banded
+        product stays banded.
+  \item[H5] The conversion dense$\to$CSR costs $\Theta(n^2)$ and dominates the total time at very high sparsity.
+  \item[H6] Memory: dense methods need $24\,n^2$ bytes (three matrices); the CSR kernel needs $\approx12$ bytes per stored nonzero plus the
+        operands in dense form when it is fed from dense files.
+\end{enumerate}
+The densities $70\%$ and $90\%$ were added to the declared list after the smoke test at $n=500$ showed that the break-even density
+of H4 lay above the first planned maximum ($50\%$).
+
+\paragraph{Scope.} The conclusions are limited to the implementations, compiler options, inputs and the virtual machine of
+Section~\ref{sec:env}. They are not a general statement about optimisation techniques or sparse libraries.
+
+\section{Background}
+
+\paragraph{Loop order and the memory hierarchy.} With row-major storage, the i-j-k loop reads $a_{ik}$ along a row but $b_{kj}$ along a
+column (stride $8n$ bytes), so for large $n$ almost every access to $B$ touches a new cache line and, from $n=512$, a new $4$\,KiB page
+\cite{drepper,hennessy}. Reordering the loops to i-k-j makes the innermost loop update a row of $C$ with a row of $B$ (unit stride) and keeps
+$a_{ik}$ in a register; the number of floating-point operations is unchanged.
+
+\paragraph{Cache blocking.} Processing the product in $b\times b$ tiles lets the three tiles of $A$, $B$ and $C$ stay in a cache level while
+they are reused $b$ times \cite{lam,goto}. The three tiles occupy $3\cdot8b^2$ bytes, which should fit in the L1 data cache ($32$\,KiB per core here)
+for $b\le36$, or in the L2 cache ($1$\,MiB per core) for $b\le209$.
+
+\paragraph{Sparse matrices and CSR.} Compressed Sparse Row (CSR) stores a matrix as three arrays: the row pointers
+(\texttt{ptr}, $n+1$ entries), the column index and the value of each nonzero \cite{saad}. Here \texttt{ptr} is \texttt{int64}, indices are \texttt{int32}
+and values \texttt{float64}: $12$ bytes per nonzero plus $8(n+1)$ bytes. Gustavson's row-wise algorithm \cite{gustavson} computes row $i$ of $C$ as the
+sum of the rows $k$ of $B$ scaled by the nonzeros $a_{ik}$ of row $i$ of $A$, accumulating in a dense workspace of length $n$; the work is the
+number of products with both factors nonzero, $\sum_k \text{nnz}(A_{:,k})\,\text{nnz}(B_{k,:})$ (the ``flops'' of the sparse product).
+For uniformly random patterns with density $d$ this is $\approx d^2n^3$ and the expected density of $C$ is $1-(1-d^2)^n$.
+
+\paragraph{Floating-point error.} For a sum of $m\le n$ products, any evaluation order gives $|\hat c-c|\le\gamma_m\sum_k|a_{ik}b_{kj}|$ with
+$\gamma_m=mu/(1-mu)$ and $u=2^{-53}$ \cite{higham,goldberg}. Because all entries are non-negative, $\sum_k|a_{ik}b_{kj}|=c_{ij}$, so two evaluation
+orders differ by at most $2\gamma_n$ in relative terms (triangle inequality); this is the acceptance tolerance used throughout (Section~\ref{sec:correct}).
+
+\paragraph{Benchmarking practice.} The protocol follows common recommendations: central value and spread over repeated runs, warm-up separated
+from steady state, an explicit timing boundary, and a full description of the environment \cite{georges,hoefler}.
+
+\section{Methodology}
+
+\subsection{Implementations and reuse of Assignment~1}
+\label{sec:impl}
+All methods are in one C file (\texttt{src/c/matmul2.c}); each kernel is a separate non-inlined function.
+\begin{itemize}
+  \item \textbf{i-j-k (baseline)}: the Assignment~1 C kernel \emph{unchanged} (scalar accumulator, one contiguous row-major block per matrix) \cite{a1}.
+  \item \textbf{i-k-j}: for each $i$, zero the row $C_{i,:}$, then for each $k$ add $a_{ik}B_{k,:}$ to it.
+  \item \textbf{blocked}: tiles of $b\times b$ in the order $ii,kk,jj$ with i-k-j inside a tile; $b=96$ (Section~\ref{sec:bs}); partial tiles at the border.
+  \item \textbf{csr}: own implementation of CSR$\times$CSR$\to$CSR with Gustavson's algorithm and a dense accumulator; the columns of every output row
+        are sorted (insertion sort for short rows, \texttt{qsort} otherwise; a flag scan when more than $n/16$ columns are touched) so that $C$ is canonical CSR.
+        The output arrays grow by doubling (\texttt{realloc}). Inputs are dense files converted to CSR by own code (\emph{csr}), or CSR files (\emph{csrfile},
+        used for the sparse-only scaling runs).
+\end{itemize}
+No multiplication library is used in any kernel. NumPy and SciPy appear only outside the timed regions (input generation and validation). A
+smoke test of the driver on a few matrices was run before the real campaigns; its numbers are not used.
+
+\paragraph{Same arithmetic.} Every $c_{ij}$ accumulates the products $a_{ik}b_{kj}$ for $k$ increasing, starting from $0.0$, in IEEE-754 binary64
+without fused multiply--add (\texttt{-ffp-contract=off}); the sparse kernel only skips products that are exactly zero (adding $+0.0$ to a non-negative sum
+changes nothing). Hence all methods should return identical bits, which is tested (H3, Section~\ref{sec:correct}).
+
+\subsection{Inputs}
+\textbf{Dense.} The uniform $[0,1)$ matrices of Assignment~1: raw little-endian binary64 files from
+\texttt{numpy.random.default\_rng([20261012, n, w])} ($w=0$ for $A$, $1$ for $B$). For every size used in both assignments the SHA-256 digest equals the one of
+Assignment~1 (checked by \texttt{scripts/gen\_inputs.py}), i.e.\ the dataset is reused byte for byte.
+\textbf{Sparse.} Density $d$ is the percentage of \emph{nonzero} entries, sparsity $=100-d$ percent of zeros. Declared levels
+$d\in\{0.1,1,5,10,20,30,50,70,90\}\%$ (sparsity $99.9$ to $10\%$), sizes $n\in\{500,1000,2000\}$ and two structures:
+\emph{random} (each row receives $k\sim\mathrm{Binomial}(n,d)$ nonzeros at distinct, uniformly chosen columns) and \emph{banded} (a fully populated band centred on the
+diagonal, clipped at the border, whose width is chosen so that the number of entries is closest to $dn^2$). Nonzero values are $1-u$, $u\sim U[0,1)$,
+i.e.\ in $(0,1]$. Seeds: \texttt{default\_rng([20261012, n, w, s, 10d])} with $s=1$ (random) or $2$ (banded). The achieved densities and the number of nonzeros are
+stored in \texttt{data/manifest.json} and shown in the tables. The same logical matrix exists as a dense file (dense methods and \emph{csr}) and as a
+CSR file. For the scaling experiment only CSR files exist, for $d=0.1\%$ and $1\%$ (random).
+
+\subsection{Environment}
+\label{sec:env}
+One virtual machine, one process at a time, nothing else running except the driver (it polls the child every $0.5$\,s) and, outside the timed regions, the
+validation of the previous run. Table~\ref{tab:env} lists the environment. The virtual machine is of the same class as in Assignment~1, but it is a new
+session (different kernel build), so the baseline was \emph{re-measured} and never taken from Assignment~1. All kernels are single-threaded; no library creates threads inside them
+(thread count $=1$ in every row of the CSV files). Processes are not pinned and the frequency governor is not visible.
+
+\begin{table}[H]
+\centering\small
+\input{tables/env.tex}
+\caption{Hardware and software environment.}
+\label{tab:env}
+\end{table}
+
+\subsection{Fixed settings and timing boundary}
+\label{sec:timer}
+Fixed for all comparisons: binary64, inputs, single thread, one process per configuration, monotonic timer (\texttt{clock\_gettime(CLOCK\_MONOTONIC)}),
+and \texttt{gcc -O2 -std=c11 -ffp-contract=off} (no \texttt{-march=native}, no \texttt{-ffast-math}). Other compiler options are only used in the separate
+supplementary experiment of Section~\ref{sec:supp}.
+
+\textbf{The timer measures the multiplication kernel for every method}, with one rule: \emph{the kernel reads its two operands and defines every element of its output.}
+Allocation of the dense $C$ and touching its pages happen before the timer; the zero-fill that i-k-j and blocked need is \emph{inside} the kernel (it is $O(n^2)$);
+the baseline writes each element once and needs none. The CSR kernel allocates its workspace and its output arrays \emph{inside} the timed region because the output
+size is not known in advance. Outside the timer: reading input files, freeing the output, the checksum and the dump of the result.
+\textbf{Conversion is measured separately}: in every repetition of a \emph{csr} run the dense$\to$CSR conversion of $A$ and $B$ is timed on its own
+(\texttt{conv\_s}); ``kernel + conversion'' is the sum of the two non-overlapping intervals. The result of every multiplication is consumed (checksum after each sample; the last product is dumped and verified).
+
+\subsection{Repetitions, statistics and budgets}
+Each configuration runs in its own process: warm-up samples (excluded from the statistics, kept in the CSV) followed by measured samples, by the estimated
+time $\hat t$ of one multiplication: $\hat t\le1$\,s: 3 warm-up, 10 measured; $\le30$\,s: 1, 5; $\le120$\,s: 0, 3; else 0, 2. For $\hat t<50$\,ms a batch of
+$\lceil0.1\,\text{s}/\hat t\rceil$ multiplications is timed and divided by the batch. Reported: \textbf{median} and \textbf{IQR} ($Q_3-Q_1$); all raw samples are in
+\texttt{results/raw\_measurements.csv}. Configurations are interleaved by size (for each $n$ every method) so that drift of the machine affects all methods alike.
+\textbf{Budgets} (declared before the large runs): at most \textbf{300\,s} per timed sample and \textbf{4\,GiB} per process (polled RSS plus an address-space cap of
+$4.25$\,GiB, so that an allocation failure ends the run cleanly); a violation is recorded as \emph{timeout} or \emph{memory failure}, never with an invented time. The driver does not
+attempt a configuration whose predicted time exceeds $3\times300$\,s (or predicted memory $3\times4$\,GiB) and stops a series after its first failure. The \emph{largest feasible} size
+(all repetitions completed and validated) and the \emph{largest attempted} size are reported separately.
+
+\textbf{Declared size sequences.} Dense (Part~A): $n\in\{100,\allowbreak 250,\allowbreak 500,\allowbreak 512,\allowbreak 750,\allowbreak 1000,\allowbreak 1024,\allowbreak 1250,\allowbreak 2000,\allowbreak 2048,\allowbreak 3000,\allowbreak 4000,\allowbreak 5000,\allowbreak 6000,\allowbreak 8000\}$, i.e.\ the starting examples $100$ and $1000$, pairs of a
+power of two and a nearby size ($500/512$, $1000/1024$, $2000/2048$) because Assignment~1 found spikes at powers of two, and larger sizes up to the budget. Sparse matched comparison (Part~B):
+$n\in\{500,\allowbreak 1000,\allowbreak 2000\}$. Sparse scaling: $n\in\{2000,\allowbreak 4000,\allowbreak 8000,\allowbreak 16000,\allowbreak 32000,\allowbreak 64000,\allowbreak 128000\}$ for $d=0.1\%$ and $\{2000,\dots,32000\}$ for $d=1\%$, until the budget is reached.
+
+\subsection{Tile size}
+\label{sec:bs}
+The tile size was chosen by a sweep $b\in\{8,16,24,32,48,64,96,128,192,256,384\}$ of the blocked method at $n=1500$, a size that is \emph{not} part of the comparison, in two independent
+processes; the rule fixed in advance was ``smallest mean of the two medians''. The result is $b=96$ (Section~\ref{sec:resbs}); the landscape turned out to be flat, so the choice is not critical.
+
+\subsection{Memory metric}
+Peak resident set size of the whole process (\texttt{VmHWM} in \texttt{/proc/self/status}, read by the program before it exits), which includes the runtime, the input matrices and any
+temporary buffers (the \emph{csr} method keeps the dense inputs resident to convert them in every repetition). \texttt{ru\_maxrss} from \texttt{wait4} is stored as a cross-check but is
+unreliable for small runs. RSS is not storage: the model lines are estimates ($24n^2$ bytes dense; $12$ bytes per nonzero plus $8(n+1)$ per CSR matrix), and
+RSS counts only pages touched, in units of one page.
+
+\subsection{Correctness}
+\label{sec:correct}
+\texttt{scripts/test\_correctness.py} (run before any benchmark, \texttt{results/correctness\_tests.csv}) checks the dense methods and the sparse method on cases with known answers
+(scalar, $2\times2$ non-commutative, hand-computed $3\times3$, zero and identity matrices on both sides, all-ones, integer matrices -- \emph{exact} equality, no rounding because all values are
+small integers), on random matrices against NumPy (relative tolerance $2\gamma_n$, absolute tolerance $0$; entries that must be exactly zero are required to be exactly zero), and on sparse edge cases (empty matrix, identity, diagonal,
+empty row and column, fully dense) and random and banded matrices against SciPy (identical nonzero pattern, same tolerance). It also requires bit-for-bit equality of all dense methods
+and 13 tile sizes (from $1$ to larger than $n$, including sizes that do not divide $n$), bit-for-bit equality between the densified sparse result and the dense baseline, sorted column indices, \emph{csr} $=$ \emph{csrfile}, and repeated runs
+(warm-up and batching) into the same buffers to give identical checksums. A mutation check was also run: a kernel without its zero-fill was at first \emph{not} detected (fresh buffers are already zero), which led to adding the repeated-run tests above, after which it is detected. During the benchmark every run dumps its last product and the driver compares it with NumPy (dense) or SciPy (sparse), with the same tolerance, plus the checksum
+(tolerance $\gamma_{n^2+2n}$) and, for the sparse method, $64$ spot-check rows (nonzero count and row sum); for the large scaling runs, whose output may be gigabytes, only the spot-check rows are verified.
+
+\subsection{Supplementary experiments (kept separate from the controlled comparison)}
+\label{sec:supp}
+\begin{enumerate}
+  \item \textbf{Compiler options} (Section~\ref{sec:resflags}): the three dense methods built with \texttt{-O2} (primary), \texttt{-O2 -funroll-loops}, \texttt{-O3} and \texttt{-O3 -march=native}
+        (always \texttt{-ffp-contract=off}) at $n\in\{1000,2000\}$. It was added after the compiler's vectorisation report showed that \texttt{-O2} does not vectorise any kernel
+        (\texttt{results/gcc\_vec\_report\_*.txt}, \texttt{results/vectorization\_evidence.csv}); it separates the effect of SIMD from the effect of the loop transformations.
+  \item \textbf{Between-process variability} (Section~\ref{sec:resproc}): the dense methods at $n=1000$ in six independent processes.
+  \item \textbf{Value independence} of the dense methods: the same dense methods are run on the matched sparse-valued matrices (zeros stored explicitly) to check that their time does not depend on the values.
+\end{enumerate}
