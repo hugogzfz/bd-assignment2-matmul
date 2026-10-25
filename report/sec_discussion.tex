@@ -19,6 +19,8 @@ third factor, the \emph{compiler}, matters: with \texttt{-O3 -march=native} the 
 \paragraph{Percentage of zeros is not enough.} At the same $d=1\%$ and $n=1000$, banded inputs run $15\times$ faster than random ones, produce a product $5\times$ sparser ($1.9\%$ versus $9.4\%$), and have $15\times$ lower cost per useful product. A statement such as ``a matrix with $99\%$ zeros is fast'' is therefore false in general: it depends on the pattern,
 on the product's fill-in, on the format, on whether conversion is needed and on the implementation of the kernel.
 
+\paragraph{Why a tile of 96 works although it does not fit in L1.} Three $96\times96$ tiles occupy $216$\,KiB, far more than the $32$\,KiB L1 data cache, yet $b=96$ was not slower than $b=32$ (which fits; $2.50$ versus $2.63$\,s, within the variability). The three-tiles-in-L1 criterion of Section~2 is conservative for this loop order: inside a tile the i-k-j order only needs one row of the $C$ tile and one row of the $B$ tile at a time ($768$\,bytes each) in L1, while the $B$ tile ($72$\,KiB) is reused from L2 for every row $i$ and is read with unit stride, a pattern the hardware prefetchers predict well. This explanation is a hypothesis; without hardware counters it was not measured.
+
 \subsection{Hypotheses}
 \begin{table}[H]
 \centering\small
@@ -47,6 +49,7 @@ H6 & supported & dense: $24.00$ bytes per $n^2$; CSR: model within $1\%$ of the 
 \subsection{Limitations}
 \begin{itemize}
   \item \textbf{One machine.} A virtual machine with $2$ vCPUs, $8$\,GiB, shared host, unpinned, no visible frequency governor. Between-process variability reaches $13$--$35\%$ at $n=1000$; with $2$--$5$ samples at large $n$ the medians are less certain than the IQR suggests. Results are \emph{not} from the author's laptop and would differ in absolute terms there.
+  \item \textbf{No CPU pinning.} Pinning each process to one logical CPU (\texttt{taskset}) could reduce the between-process noise and will be used in Assignment~3 (threads); in a virtual machine it fixes the process to a vCPU, not to a physical core, so it can reduce but not remove the variability.
   \item \textbf{Few samples at the largest sizes} (budget rule): baseline $n=3000$ has $2$ samples; $4000$--$6000$ have $2$--$3$; the sparse scaling has $5$.
   \item \textbf{Implementation scope.} One sparse format (CSR) and one algorithm (Gustavson with a dense accumulator); no comparison with a library (SciPy was used only to validate), no CSC/COO, no tuned sort. A faster sparse kernel would move the break-even; a library dense kernel (BLAS) would very likely be faster than all three dense methods and would move it down.
   \item \textbf{Inputs.} Two structures only (random and banded) and positive values; real matrices (power-law degree, block structure) may behave differently. Matched comparisons only up to $n=2000$; the baseline is run on only two cells at $n=2000$.

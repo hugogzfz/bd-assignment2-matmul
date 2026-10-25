@@ -169,7 +169,7 @@ and 13 tile sizes (from $1$ to larger than $n$, including sizes that do not divi
 \begin{enumerate}
   \item \textbf{Compiler options} (Section~\ref{sec:resflags}): the three dense methods built with \texttt{-O2} (primary), \texttt{-O2 -funroll-loops}, \texttt{-O3} and \texttt{-O3 -march=native}
         (always \texttt{-ffp-contract=off}) at $n\in\{1000,2000\}$. It was added after the compiler's vectorisation report showed that \texttt{-O2} does not vectorise any kernel
-        (\texttt{results/gcc\_vec\_report\_*.txt}, \texttt{results/vectorization\_evidence.csv}); it separates the effect of SIMD from the effect of the loop transformations.
+        (packed versus scalar multiply instructions counted in the object code, \texttt{results/vectorization\_evidence.csv}); it separates the effect of SIMD from the effect of the loop transformations.
   \item \textbf{Between-process variability} (Section~\ref{sec:resproc}): the dense methods at $n=1000$ in six independent processes.
   \item \textbf{Value independence} of the dense methods: the same dense methods are run on the matched sparse-valued matrices (zeros stored explicitly) to check that their time does not depend on the values.
 \end{enumerate}

@@ -126,7 +126,7 @@ $S_k=t_{dense}/t_{kernel}$, $S_t=t_{dense}/(t_{kernel}+t_{conv})$.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig7_sparse_vs_dense.pdf}
-\caption{Time per multiplication of the CSR kernel (with and without conversion) and of the three dense methods against the density $d$, for random and banded inputs. Medians; dense methods are flat because they do not exploit zeros.}
+\caption{Time per multiplication of the CSR kernel (with and without the dense$\to$CSR conversion) against the input density $d$. The dense methods do not depend on $d$, so only the best one is drawn: its median over the densities (line) and its range (shaded). The dotted line marks the interpolated break-even density of the kernel. All three dense methods are listed in Table~\ref{tab:sparse2000}.}
 \label{fig:sparse}
 \end{figure}
 
