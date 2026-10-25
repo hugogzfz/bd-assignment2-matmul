@@ -1,0 +1,2343 @@
+{
+  "files": {
+    "A_band_n1000_d0.1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.1,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 1000,
+      "sha256": "1f66b027987e319987ddcbd2720e5e527460b0743208456f80ec318756d14021"
+    },
+    "A_band_n1000_d0.1.csr": {
+      "bytes": 20028,
+      "density_pct_actual": 0.1,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 1000,
+      "sha256": "7ddcbdf56ce9820d376c2e7762027e7e8745725625d6a4bf1036ffacc4cfc622"
+    },
+    "A_band_n1000_d1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 9975,
+      "sha256": "ad893927a70868797bb2f33f9e626ca632b4016981b2c7da9689d59d40c55129"
+    },
+    "A_band_n1000_d1.csr": {
+      "bytes": 127728,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 9975,
+      "sha256": "11bafc1a4b5878721629e39576f1090eb646b1b710a8c768170ec1c3c8d4a566"
+    },
+    "A_band_n1000_d10.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 10.0348,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 100348,
+      "sha256": "008fefeae740b730018c6cbd6fee85761b95161afa3d5c8fdf366867cd964fe8"
+    },
+    "A_band_n1000_d10.csr": {
+      "bytes": 1212204,
+      "density_pct_actual": 10.0348,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 100348,
+      "sha256": "35ccdf7c9a31bf54d2dbbf00a2293196f7537c17e716d7568b44e8e447115d06"
+    },
+    "A_band_n1000_d20.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 19.987,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 199870,
+      "sha256": "b9200362252ea21ac282811e05f41eb2032264118174841effbec82d6362f64d"
+    },
+    "A_band_n1000_d20.csr": {
+      "bytes": 2406468,
+      "density_pct_actual": 19.987,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 199870,
+      "sha256": "2fadca6b8d4307448ba89acdbe60302d05e76a383caacc52de76e096178c8938"
+    },
+    "A_band_n1000_d30.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 30.0268,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 300268,
+      "sha256": "799ae13e535e41cdeafb805ad941fa7410990188fc6cfaf4942ba568e102810a"
+    },
+    "A_band_n1000_d30.csr": {
+      "bytes": 3611244,
+      "density_pct_actual": 30.0268,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 300268,
+      "sha256": "eae58fab9e3c49d97220036f48d20143206fd363931271ef874e0d57a136aac2"
+    },
+    "A_band_n1000_d5.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 5.035,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 50350,
+      "sha256": "db9781d9b2cfdeb6d34189ae54cee996b079f3ff0be459ae0206f01e57b1e17b"
+    },
+    "A_band_n1000_d5.csr": {
+      "bytes": 612228,
+      "density_pct_actual": 5.035,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 50350,
+      "sha256": "938f787eaf4c268ed348e97fabbc5ed3ea40e3195e2d7d98611a9b173b668487"
+    },
+    "A_band_n1000_d50.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 500151,
+      "sha256": "335da8e4431c33ef87fbb3ac436a5e6c14b856f702345e2c6fd42372b61017a1"
+    },
+    "A_band_n1000_d50.csr": {
+      "bytes": 6009840,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 500151,
+      "sha256": "c8c0053e936ecb3a47b2fec3c9028d0c9935f4393dc15f7b7624b74213ba8748"
+    },
+    "A_band_n1000_d70.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 70.0244,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 700244,
+      "sha256": "13c2c2463ceba0665fe5db73048dc6238369c999d32bc8719e9dbcd682ab9356"
+    },
+    "A_band_n1000_d70.csr": {
+      "bytes": 8410956,
+      "density_pct_actual": 70.0244,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 700244,
+      "sha256": "bfb8243841b9a4fe8c93680e3dbd6911f5da575db714f0d3efed3c3657043286"
+    },
+    "A_band_n1000_d90.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 900144,
+      "sha256": "f885ae70314c3673b643fe2dc2057c07c56a23900d21f22c4e25759aa1c0e24c"
+    },
+    "A_band_n1000_d90.csr": {
+      "bytes": 10809756,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 900144,
+      "sha256": "821c0862b476cc0286f09e801ddaf634d2d58dc9ca650e0883cf6fca1d72de16"
+    },
+    "A_band_n2000_d0.1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.099975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3999,
+      "sha256": "6710a985f46315f4a03c55de27520c4c716de7334ef3a7842870084c1819c5d6"
+    },
+    "A_band_n2000_d0.1.csr": {
+      "bytes": 64016,
+      "density_pct_actual": 0.099975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3999,
+      "sha256": "37c8876ebcfdb0e69cd7d8d75764b37fc5fda3b9751d5dc0891fd5ff6f59fd16"
+    },
+    "A_band_n2000_d1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 39900,
+      "sha256": "51a4fc62d3ca719fe6e6e1807827473e5531daac944e9af7df242048b081be61"
+    },
+    "A_band_n2000_d1.csr": {
+      "bytes": 494828,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 39900,
+      "sha256": "907bd36e13a08b4c06a7a2cb1363f965dcffd8db701786a0d6cda4e6028931d3"
+    },
+    "A_band_n2000_d10.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 9.98735,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 399494,
+      "sha256": "6d0844fde3d34baf68eab2687df21199160f60d191a7610888d1e5ce4e8f4395"
+    },
+    "A_band_n2000_d10.csr": {
+      "bytes": 4809956,
+      "density_pct_actual": 9.98735,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 399494,
+      "sha256": "95b86e353e4a8c1aa160b1f068fb21a4b87ee0a1817ece86457c45fd0d6fdcca"
+    },
+    "A_band_n2000_d20.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 19.986975,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 799479,
+      "sha256": "1cf784cc3679084b1afd2ebaf9d672f56017636f1d971deae72a76f19996f48c"
+    },
+    "A_band_n2000_d20.csr": {
+      "bytes": 9609776,
+      "density_pct_actual": 19.986975,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 799479,
+      "sha256": "4f7eec422d05cd92c6a88993beb88a8e62d7e8c9dbcc655bd08c9b995fc2ae0f"
+    },
+    "A_band_n2000_d30.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 29.98495,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 1199398,
+      "sha256": "552f30be9bbc36efafcfd5c9aee46f0681cb11fdfdae30a84fce962a048099c3"
+    },
+    "A_band_n2000_d30.csr": {
+      "bytes": 14408804,
+      "density_pct_actual": 29.98495,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 1199398,
+      "sha256": "c61ded6b1047026f0fd0af2e1c182d8a43a3731b7a0398882b8e54900f66257e"
+    },
+    "A_band_n2000_d5.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 4.98625,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 199450,
+      "sha256": "45069cf86aa40c6d1b8a88e7e855f24af3c99b7e72eb9e55b3ab2d224e85e550"
+    },
+    "A_band_n2000_d5.csr": {
+      "bytes": 2409428,
+      "density_pct_actual": 4.98625,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 199450,
+      "sha256": "fe65dc9dd300fad1ed42230c0421e074e1c760f033f3beb0037f457eadcb18af"
+    },
+    "A_band_n2000_d50.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2000604,
+      "sha256": "6ac4ad9ae2c0e1dc1e584ddd7e4d2c6e034a39206f3cb7d2ccb699d8c9125db4"
+    },
+    "A_band_n2000_d50.csr": {
+      "bytes": 24023276,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2000604,
+      "sha256": "c34567ab86ef95ebb05387e098828f9d746acb522717c25193e2a7fed55ebcdd"
+    },
+    "A_band_n2000_d70.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 69.997,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2799880,
+      "sha256": "c296f33c41ffaf85bc41329089530155836ea579f7a30961d716aa5f98f5c128"
+    },
+    "A_band_n2000_d70.csr": {
+      "bytes": 33614588,
+      "density_pct_actual": 69.997,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2799880,
+      "sha256": "66023ebb88cecc6e6545450dc4a2e79dd2397ad9447bf06b8aa74e3c83af079a"
+    },
+    "A_band_n2000_d90.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 89.9986,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3599944,
+      "sha256": "2c00f07c6a01c1853b2f24e7cda9ed6ec2e9161281711eeb6e62c6998b7369cd"
+    },
+    "A_band_n2000_d90.csr": {
+      "bytes": 43215356,
+      "density_pct_actual": 89.9986,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3599944,
+      "sha256": "81fee4c05387468c867eb17543b4d062a69e664b3c8090f005de88db8e08ffa8"
+    },
+    "A_band_n500_d0.1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.2,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 500,
+      "sha256": "168ce51df7881b444e4ac3c578d3619c65ff769f16c94b9ebb0ce864a5859aa2"
+    },
+    "A_band_n500_d0.1.csr": {
+      "bytes": 10028,
+      "density_pct_actual": 0.2,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 500,
+      "sha256": "e56e884da39c1257ffe20d4e7c090bc41b66effdc51d7b5113be3ef33e093d98"
+    },
+    "A_band_n500_d1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.9976,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 2494,
+      "sha256": "777b3e1bdef4c2d49b66259ee713316454102b8cb8ec140f43de0d3f448088d1"
+    },
+    "A_band_n500_d1.csr": {
+      "bytes": 33956,
+      "density_pct_actual": 0.9976,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 2494,
+      "sha256": "b1fd18087eb7e670b7b9a8a60a273b3c44eef9fe468b689128bf0a94a463569c"
+    },
+    "A_band_n500_d10.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 9.94,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 24850,
+      "sha256": "a6e230e5474efe6477df9a286f93b453190a9108cf4d09c90c5324f3f30cc09a"
+    },
+    "A_band_n500_d10.csr": {
+      "bytes": 302228,
+      "density_pct_actual": 9.94,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 24850,
+      "sha256": "22f2c8fc84508e3c6af6fbb0878a89027b1a0b634e134a1fad5a25a2e387fd00"
+    },
+    "A_band_n500_d20.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 20.0764,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 50191,
+      "sha256": "3a5023ad93c1f0a5dd8c7f10002953f6ed11926a397b14dce902144fd08f10c0"
+    },
+    "A_band_n500_d20.csr": {
+      "bytes": 606320,
+      "density_pct_actual": 20.0764,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 50191,
+      "sha256": "d9cff3ebd85270a75ed23195c74776cdd76072092805c61172b68edf4d48d495"
+    },
+    "A_band_n500_d30.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 29.9432,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 74858,
+      "sha256": "7a958e8612612a7e440e6e4ac8643fe831f2de95d9ee63715b81f9cbd23a879b"
+    },
+    "A_band_n500_d30.csr": {
+      "bytes": 902324,
+      "density_pct_actual": 29.9432,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 74858,
+      "sha256": "449d18990a7393c3cfa0280c2c7f92140ef16caddc93e67995150fa655896a76"
+    },
+    "A_band_n500_d5.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 4.9376,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 12344,
+      "sha256": "22de1a08196b3128602c4c334e84bf7d61270915a4c93ff17db02dd066c5d119"
+    },
+    "A_band_n500_d5.csr": {
+      "bytes": 152156,
+      "density_pct_actual": 4.9376,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 12344,
+      "sha256": "1aca4bd21a4e2663422a642319ce254c56fb030e2c0b8629d993d6a5c95217d9"
+    },
+    "A_band_n500_d50.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 50.0152,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 125038,
+      "sha256": "8f3882b50afd2f8971d69d4af9a74295628ba2a5c528f5461ee31a3941d7311b"
+    },
+    "A_band_n500_d50.csr": {
+      "bytes": 1504484,
+      "density_pct_actual": 50.0152,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 125038,
+      "sha256": "d8d34b3715030ca4d236bef9d0c2fccd8847c65e77a60f5956a685801dad3f99"
+    },
+    "A_band_n500_d70.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 69.9696,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 174924,
+      "sha256": "b4d87d3624923ab4ee47bbbd628b9a78d643370cda3d8e2c51fda96a104860e6"
+    },
+    "A_band_n500_d70.csr": {
+      "bytes": 2103116,
+      "density_pct_actual": 69.9696,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 174924,
+      "sha256": "9fa66144a88681c07fb8c72ede36536fa14cd85fc765a6fad95f1f20eddd8d3d"
+    },
+    "A_band_n500_d90.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 225036,
+      "sha256": "97b5200660f700aef5ee8a5f38f6e8971352d48ee59522bbb4bc59138082cc87"
+    },
+    "A_band_n500_d90.csr": {
+      "bytes": 2704460,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 225036,
+      "sha256": "f5df216cff4eb587a1ac17b1774118dfb6f58f1083a28f32006781fe0271a521"
+    },
+    "A_n100.bin": {
+      "bytes": 80000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 100,
+      "sha256": "f85e42172d0db4bae7a4178014cc7997980ade26a60519017fdce5160bb1d318"
+    },
+    "A_n1000.bin": {
+      "bytes": 8000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1000,
+      "sha256": "9c9b457f7ae76d747e09935cfe718a980c7b6669421987a34a9f131bc7959760"
+    },
+    "A_n1024.bin": {
+      "bytes": 8388608,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1024,
+      "sha256": "a1f4d8aa5539f11fb0e34a0d796ec7d0892fbd428f2d2232667063e6484db532"
+    },
+    "A_n1250.bin": {
+      "bytes": 12500000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1250,
+      "sha256": "cf5a2fc2ccf01f06b0023e760af351407fc013e82afeb2fbb469516fd87da2a9"
+    },
+    "A_n1500.bin": {
+      "bytes": 18000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1500,
+      "sha256": "6d3a3b5fa721731a4104d080a0ddf36cb0e611d1533e273a350a6cac9ab9a0af"
+    },
+    "A_n2000.bin": {
+      "bytes": 32000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 2000,
+      "sha256": "598ac84f9c9c3a4eba429086c48c709714c5a655fc443231fdf658201044d69c"
+    },
+    "A_n2048.bin": {
+      "bytes": 33554432,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 2048,
+      "sha256": "cd26297761688dc479caa9f39909f4dc94d7008e2896ce6a97a5205c2b329971"
+    },
+    "A_n250.bin": {
+      "bytes": 500000,
+      "kind": "dense-uniform",
+      "n": 250,
+      "sha256": "6ffe3e35403fb74d9135f497a777f885777922c14a8e64707d1781f1174b488b"
+    },
+    "A_n3000.bin": {
+      "bytes": 72000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 3000,
+      "sha256": "9fc9007f247a8f55e00678245063b28730bce256ddbded305cce8fd01b0caff7"
+    },
+    "A_n4000.bin": {
+      "bytes": 128000000,
+      "kind": "dense-uniform",
+      "n": 4000,
+      "sha256": "9e94d55bd5299f1612a17dfa10ebac9ca4a0ff6df6dcdd41c8d9ea2aa6d9fe65"
+    },
+    "A_n500.bin": {
+      "bytes": 2000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 500,
+      "sha256": "919f5edd27106bb702f9f10bc0e13b39fbfd77f5d073c39f7c8f2316bdb1a1e2"
+    },
+    "A_n5000.bin": {
+      "bytes": 200000000,
+      "kind": "dense-uniform",
+      "n": 5000,
+      "sha256": "4946c28f96bbd10a5b2d2373c67a1db75ce602e5e77782f0927e4d6fcae59943"
+    },
+    "A_n512.bin": {
+      "bytes": 2097152,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 512,
+      "sha256": "3d846009738373e6fcc042f181af77674176099efa016a6355805b8dfb5260b8"
+    },
+    "A_n6000.bin": {
+      "bytes": 288000000,
+      "kind": "dense-uniform",
+      "n": 6000,
+      "sha256": "352bab68eb2cb10a0602abc52d5f289e4293680162d719dec30fa0c9fa63c1f8"
+    },
+    "A_n750.bin": {
+      "bytes": 4500000,
+      "kind": "dense-uniform",
+      "n": 750,
+      "sha256": "a59ecd0835e898090d691769cd80cca92a6e44b058359142db53da991461d3a4"
+    },
+    "A_n8000.bin": {
+      "bytes": 512000000,
+      "kind": "dense-uniform",
+      "n": 8000,
+      "sha256": "8293fd347e8ab1bc787c97faa1cec7327f3f46c8e482af7dbaf72795122f7501"
+    },
+    "A_unif_n1000_d0.1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.0968,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 968,
+      "sha256": "6fce7e4755fc37a98e8b75784085da17a2bf76b07e9d2835938d4b3dd2687391"
+    },
+    "A_unif_n1000_d0.1.csr": {
+      "bytes": 19644,
+      "density_pct_actual": 0.0968,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 968,
+      "sha256": "9ed044f68e9c54c533839198a5ff1ab9639b66b3b41adeef997f222d969e9a08"
+    },
+    "A_unif_n1000_d1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.9963,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 9963,
+      "sha256": "16fb58a4ef62c1ce42cd42136a768534ec4569cd2a2f6f3bc032894422424ef7"
+    },
+    "A_unif_n1000_d1.csr": {
+      "bytes": 127584,
+      "density_pct_actual": 0.9963,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 9963,
+      "sha256": "9801a430b95cc3f23ee266add3f5f308bbc2e506c7d66e6f8640cf43deb964b8"
+    },
+    "A_unif_n1000_d10.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 9.9647,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 99647,
+      "sha256": "4cec75a08a7127930db9fab98fa6d23f58efbc65bf966d0481ef1a8f4d712839"
+    },
+    "A_unif_n1000_d10.csr": {
+      "bytes": 1203792,
+      "density_pct_actual": 9.9647,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 99647,
+      "sha256": "baa7938c9b53a43826343963fc903f21769c79a45b7fd8d0b2bab864867032eb"
+    },
+    "A_unif_n1000_d20.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 19.976,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 199760,
+      "sha256": "46e8aad409813d619a5b959c7976c130940ec70e7d1b1381dbcc969cac53ba7c"
+    },
+    "A_unif_n1000_d20.csr": {
+      "bytes": 2405148,
+      "density_pct_actual": 19.976,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 199760,
+      "sha256": "4ca4ccb5ca840a2214143421537fdb8f2b45a9439617e4c5cbb98b1a30017708"
+    },
+    "A_unif_n1000_d30.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 29.995,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 299950,
+      "sha256": "de5704a9bd14ced140c05925b1561845698fe5e7d0f7e5a7d009f976252d8f73"
+    },
+    "A_unif_n1000_d30.csr": {
+      "bytes": 3607428,
+      "density_pct_actual": 29.995,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 299950,
+      "sha256": "30a12e15f5fd6fdcc4fc1070c510dde30ca9d3b080c34447201500a6094ffc20"
+    },
+    "A_unif_n1000_d5.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 4.9966,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 49966,
+      "sha256": "c15d6fc711ea37a8cd672376e832d6f8525cc77ca5c034da1252918e3a38d984"
+    },
+    "A_unif_n1000_d5.csr": {
+      "bytes": 607620,
+      "density_pct_actual": 4.9966,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 49966,
+      "sha256": "31b973155e263165c3932ebcdca8d932e1fe13ad6b779dd2dfcbf8c3178079b4"
+    },
+    "A_unif_n1000_d50.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 49.9946,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 499946,
+      "sha256": "e40dd034bc72934229b532d408c8df9822e3dd70c206cec7b25a20b2e1b88428"
+    },
+    "A_unif_n1000_d50.csr": {
+      "bytes": 6007380,
+      "density_pct_actual": 49.9946,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 499946,
+      "sha256": "114487478b82e8a2de973a8b1e581af7e1be453f972e95a1efca4627e77d4285"
+    },
+    "A_unif_n1000_d70.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 70.0466,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 700466,
+      "sha256": "297f1a3e2ca9c49ebfc5e1d2d545770011dfb6880b4194bb1cd0a6efa90ef68a"
+    },
+    "A_unif_n1000_d70.csr": {
+      "bytes": 8413620,
+      "density_pct_actual": 70.0466,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 700466,
+      "sha256": "3cb383d09112e9918606432669c6be1716f9bb0c47f225fda6e4746443abfc34"
+    },
+    "A_unif_n1000_d90.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 90.0201,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 900201,
+      "sha256": "67537e047459698056fb416c9089dae5373a04c18e80df09469640772f3c2969"
+    },
+    "A_unif_n1000_d90.csr": {
+      "bytes": 10810440,
+      "density_pct_actual": 90.0201,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 900201,
+      "sha256": "37b6e3042b8087023d916c87000808e7d23ab0ece13eadba663659c76db7de93"
+    },
+    "A_unif_n128000_d0.1.csr": {
+      "bytes": 197633156,
+      "density_pct_actual": 0.10000057373046875,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 128000,
+      "nnz": 16384094,
+      "sha256": "5739998547fc3b34907ddf267b975276431cd7e48af4b45b88ba392625a5d870"
+    },
+    "A_unif_n16000_d0.1.csr": {
+      "bytes": 3212364,
+      "density_pct_actual": 0.1004015625,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 16000,
+      "nnz": 257028,
+      "sha256": "d792fdf3971644dc9975bdfa03fc63aebe57af05e16e05b671016a9b02325ad2"
+    },
+    "A_unif_n16000_d1.csr": {
+      "bytes": 30830664,
+      "density_pct_actual": 0.999434765625,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 16000,
+      "nnz": 2558553,
+      "sha256": "d637fa5b87b28655c004910be643a535b08d03907b1736dbece67ba6899f6c0f"
+    },
+    "A_unif_n2000_d0.1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.09975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3990,
+      "sha256": "36814f4dddc187444bb43a46949ed2c991464d322e48f63f5cc83d224ab92ec5"
+    },
+    "A_unif_n2000_d0.1.csr": {
+      "bytes": 63908,
+      "density_pct_actual": 0.09975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3990,
+      "sha256": "1454a8310e9c1f13b96cacdfe0e134566921989b3e0adfca203a4fda89fbbc56"
+    },
+    "A_unif_n2000_d1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 1.001025,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 40041,
+      "sha256": "fd799fb265038e6b066344ad7a22e6d62ec0add19d960e9c9341926dde5a4765"
+    },
+    "A_unif_n2000_d1.csr": {
+      "bytes": 496520,
+      "density_pct_actual": 1.001025,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 40041,
+      "sha256": "6ac6054738218b69f08b7684b5542f4d59d293af424ecf03164657128d895cd6"
+    },
+    "A_unif_n2000_d10.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 10.004575,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 400183,
+      "sha256": "81a996ce9f9dbc6fb5d87c8ec3dcce2a8887e6cf562aea5b55f4ff8757d3e9fc"
+    },
+    "A_unif_n2000_d10.csr": {
+      "bytes": 4818224,
+      "density_pct_actual": 10.004575,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 400183,
+      "sha256": "81e227212330783c959ac48f37e72564537669441ba2a191caf5f4b3ea7e8163"
+    },
+    "A_unif_n2000_d20.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 20.007775,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 800311,
+      "sha256": "17ca98ce1769e9e6fb6773dc5894c1486841a8beb310f26c571c21718758bc6a"
+    },
+    "A_unif_n2000_d20.csr": {
+      "bytes": 9619760,
+      "density_pct_actual": 20.007775,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 800311,
+      "sha256": "8aa324023fc1c853cd011c0a0348e20d1ca92472fdaadcfd7adebd1950ee3a9e"
+    },
+    "A_unif_n2000_d30.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 29.970275,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1198811,
+      "sha256": "52a8fa84dbd0f4aaacf74fccaae2ad5f53d2ab7551631c2f0629bdf7aac25e20"
+    },
+    "A_unif_n2000_d30.csr": {
+      "bytes": 14401760,
+      "density_pct_actual": 29.970275,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1198811,
+      "sha256": "bb4b7567488f0465a37e73c124cbd7fc3a438c56369f6e65d36a9208ed94a378"
+    },
+    "A_unif_n2000_d5.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 4.9979,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 199916,
+      "sha256": "887f86f2d8044a7f78236582f69e542baf173e42a6754ac91d61062745b8e214"
+    },
+    "A_unif_n2000_d5.csr": {
+      "bytes": 2415020,
+      "density_pct_actual": 4.9979,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 199916,
+      "sha256": "66ed6808bbd7447a6b08f7dacbaa236c6dc96ac3fdee1bb0b728ca20d938940a"
+    },
+    "A_unif_n2000_d50.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 49.997425,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1999897,
+      "sha256": "98a7f1f7ff8c34b569662970f20cdcca50fedd98cb023acef1f5c162fbc0d492"
+    },
+    "A_unif_n2000_d50.csr": {
+      "bytes": 24014792,
+      "density_pct_actual": 49.997425,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1999897,
+      "sha256": "fef4e3ad09a0ef77d18309af4718c3127862115aa55d3198fa6954ae843120b4"
+    },
+    "A_unif_n2000_d70.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 69.9858,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 2799432,
+      "sha256": "7c58c1f9ae8700b85787495fe1fb3a875d774f1c6887f0df568a69ba11de7175"
+    },
+    "A_unif_n2000_d70.csr": {
+      "bytes": 33609212,
+      "density_pct_actual": 69.9858,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 2799432,
+      "sha256": "c5c10af9b3e29d43d7473cf8136e270c4510ce44225b88a6617fcf7df6ff2984"
+    },
+    "A_unif_n2000_d90.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 90.003425,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3600137,
+      "sha256": "6b940aba55a2001ea9c3550dad4ef486e4268e8d0b1259b58c3df07fb12a34bb"
+    },
+    "A_unif_n2000_d90.csr": {
+      "bytes": 43217672,
+      "density_pct_actual": 90.003425,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3600137,
+      "sha256": "8e2629657d05cfa4cdd511e8df77c033ecd574182dd5db05e32279d16ef8284b"
+    },
+    "A_unif_n32000_d0.1.csr": {
+      "bytes": 12535712,
+      "density_pct_actual": 0.09993232421875,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 32000,
+      "nnz": 1023307,
+      "sha256": "af46af2cac6ce09d6de92019eda09f87f3bb9e6fff7752a3d9ff69e29ea5ad94"
+    },
+    "A_unif_n32000_d1.csr": {
+      "bytes": 123073868,
+      "density_pct_actual": 0.999494140625,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 32000,
+      "nnz": 10234820,
+      "sha256": "441820f1e8217601c225b6fd597e3022a8e902f096f7d8988b6c4b9bbec2e567"
+    },
+    "A_unif_n4000_d0.1.csr": {
+      "bytes": 227328,
+      "density_pct_actual": 0.10171875,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 4000,
+      "nnz": 16275,
+      "sha256": "6fb08a3ae0108971a432527a2b6f7bb41568d76cabb8a5dfa5b80467852360ef"
+    },
+    "A_unif_n4000_d1.csr": {
+      "bytes": 1953336,
+      "density_pct_actual": 1.00068125,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 4000,
+      "nnz": 160109,
+      "sha256": "7f15eaf196c4837bbe143a1547df8fb89ec6bbb09dcab6e62e9d3c28003226a4"
+    },
+    "A_unif_n500_d0.1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.1008,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 252,
+      "sha256": "523786be29a66cbca356f1ceb967fa13d91f0eef5a64fd17e863da7b100e7845"
+    },
+    "A_unif_n500_d0.1.csr": {
+      "bytes": 7052,
+      "density_pct_actual": 0.1008,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 252,
+      "sha256": "b439dab81d44a2ffc28f9847cc4f759857016c752ea331536d19df33d6fad548"
+    },
+    "A_unif_n500_d1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.996,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 2490,
+      "sha256": "a564138b643db4a945257747da73142b9a5920c0d83b1b59bd84ba7d396bee80"
+    },
+    "A_unif_n500_d1.csr": {
+      "bytes": 33908,
+      "density_pct_actual": 0.996,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 2490,
+      "sha256": "f41ed4d4eb83b12a978b466f45f69fe90ed7fa163b352a65e2a153cdc111ce8b"
+    },
+    "A_unif_n500_d10.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 10.1072,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 25268,
+      "sha256": "7ec6f38ae7a82aeec9d91b01ef7f7690631bfd6a99bcb92b1e0ef6e59c3f55f6"
+    },
+    "A_unif_n500_d10.csr": {
+      "bytes": 307244,
+      "density_pct_actual": 10.1072,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 25268,
+      "sha256": "94819d372c919152e577cc019a221c1015e6972a86a5a9a1a117cd7127bacddd"
+    },
+    "A_unif_n500_d20.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 20.0084,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 50021,
+      "sha256": "5a8f5a05377780bd3ba033790cdea33a5b221b3bf757fd610d2d4b8e047f8d3c"
+    },
+    "A_unif_n500_d20.csr": {
+      "bytes": 604280,
+      "density_pct_actual": 20.0084,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 50021,
+      "sha256": "a3afae5c7337715f91d53304e86d523db322626fb02d857437d0ac02f5ff7c67"
+    },
+    "A_unif_n500_d30.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 30.1,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 75250,
+      "sha256": "8873ce065e92955ba91bdc11f748bb74078d2ef00c231458811c0f43c7d2dce4"
+    },
+    "A_unif_n500_d30.csr": {
+      "bytes": 907028,
+      "density_pct_actual": 30.1,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 75250,
+      "sha256": "8ee41a841d760f07e7d13c93c2f6ebe2e9de75f0a993b948ca89bf0cbf0f85bf"
+    },
+    "A_unif_n500_d5.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 5.0304,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 12576,
+      "sha256": "9f83315382887bfc87367e45c1f26580f85e5bdfd1200a9adb76765a74954961"
+    },
+    "A_unif_n500_d5.csr": {
+      "bytes": 154940,
+      "density_pct_actual": 5.0304,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 12576,
+      "sha256": "f24dbf743ba35ec2569a431e964b51ed04ee664d1a9bd513017bb488e9a82a6b"
+    },
+    "A_unif_n500_d50.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 50.0728,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 125182,
+      "sha256": "64450634033e6f40e807923f0f3be0289ce44ce35d51ad47c5c03abdf85fd79e"
+    },
+    "A_unif_n500_d50.csr": {
+      "bytes": 1506212,
+      "density_pct_actual": 50.0728,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 125182,
+      "sha256": "7d997926d9c6a297391f1f72b11812258ed3de3f74d1e18c87de48851841ac07"
+    },
+    "A_unif_n500_d70.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 69.9992,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 174998,
+      "sha256": "b6e8e3657ac98a86ab0d81b7f420fbeb6531edca90b7c2d93dd17bcff82882e5"
+    },
+    "A_unif_n500_d70.csr": {
+      "bytes": 2104004,
+      "density_pct_actual": 69.9992,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 174998,
+      "sha256": "633da996651bd31f28cb7dc58746fa695346f619ccfccc05f193815dbe16c86f"
+    },
+    "A_unif_n500_d90.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 89.9592,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 224898,
+      "sha256": "5b7398a4300bc25ce1e410c17bc5d40eeef86cb4c25fd6daa18e7ad6795da2f4"
+    },
+    "A_unif_n500_d90.csr": {
+      "bytes": 2702804,
+      "density_pct_actual": 89.9592,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 224898,
+      "sha256": "7841f10b49c0b770a4a95ff100bf4d647f57cc7e35f620dc83ee26084c877c58"
+    },
+    "A_unif_n64000_d0.1.csr": {
+      "bytes": 49670520,
+      "density_pct_actual": 0.1000132080078125,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 64000,
+      "nnz": 4096541,
+      "sha256": "751b5786b3cea489049b673e12c1c45eaf9749e3add1290caa1e1aa30516ace2"
+    },
+    "A_unif_n8000_d0.1.csr": {
+      "bytes": 833156,
+      "density_pct_actual": 0.100146875,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 8000,
+      "nnz": 64094,
+      "sha256": "cb797fb894a1e1cd81ab5660adc4067f2e381f98a19deab67267463735517160"
+    },
+    "A_unif_n8000_d1.csr": {
+      "bytes": 7731176,
+      "density_pct_actual": 0.9983265625,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 8000,
+      "nnz": 638929,
+      "sha256": "f2a3d7704d421456e44969417722108cadc741ca6ddfbe5faed5770094ebc6e1"
+    },
+    "B_band_n1000_d0.1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.1,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 1000,
+      "sha256": "d696e500b10244ca614ce48e00d5baaf62a85089cc624141c6a538e91cd3debb"
+    },
+    "B_band_n1000_d0.1.csr": {
+      "bytes": 20028,
+      "density_pct_actual": 0.1,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 1000,
+      "sha256": "7e6bf3fc870f409cf868dca9a4d954d2f2a52076ad474694bff8b2f9e1e4fc2e"
+    },
+    "B_band_n1000_d1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 9975,
+      "sha256": "ec7ea72dcca4b6e1d115cbb2d1def7666fb725812108a86bc89976dbaa0cd703"
+    },
+    "B_band_n1000_d1.csr": {
+      "bytes": 127728,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 9975,
+      "sha256": "de6a5803941518b68e255b7cbb81ef7263ec9b696714a28885389b4656a86f68"
+    },
+    "B_band_n1000_d10.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 10.0348,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 100348,
+      "sha256": "224e3f573a3f5a9595fc2a72f4567d580d710281da62b76323670b4c863c84cd"
+    },
+    "B_band_n1000_d10.csr": {
+      "bytes": 1212204,
+      "density_pct_actual": 10.0348,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 100348,
+      "sha256": "24ddfe3880b26eaa80b84a4a5df845e3aa02eed7563ead6692d545f318880dea"
+    },
+    "B_band_n1000_d20.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 19.987,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 199870,
+      "sha256": "8b7b7c9c831276df43f4e915a3a9aaec24391ea99fd314ab1ff8390572a22f83"
+    },
+    "B_band_n1000_d20.csr": {
+      "bytes": 2406468,
+      "density_pct_actual": 19.987,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 199870,
+      "sha256": "ca6e69141853964c71ee943caf199096c590704c515cd4bbe8b600d9a46097bc"
+    },
+    "B_band_n1000_d30.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 30.0268,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 300268,
+      "sha256": "d916743c2b3dedc755489f4abf5d228aac9b1c0f51ca432bda9f86d1e105f005"
+    },
+    "B_band_n1000_d30.csr": {
+      "bytes": 3611244,
+      "density_pct_actual": 30.0268,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 300268,
+      "sha256": "af47120e647594c54f8eb4c8a1627c65d18e405186d372e545e084dd2d8e8deb"
+    },
+    "B_band_n1000_d5.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 5.035,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 50350,
+      "sha256": "91634165d10bb058da8e004a687ae39710344b0a7421a9326e6e91be4e643558"
+    },
+    "B_band_n1000_d5.csr": {
+      "bytes": 612228,
+      "density_pct_actual": 5.035,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 50350,
+      "sha256": "299c4fe85a22f3101d0312591a6c448b30ec60d9c99b09c2b738144d8b0b8eda"
+    },
+    "B_band_n1000_d50.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 500151,
+      "sha256": "7c527fd58155adc509961d017a1d4ffb0b56b4f6df00e61c8e7559357a496574"
+    },
+    "B_band_n1000_d50.csr": {
+      "bytes": 6009840,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 500151,
+      "sha256": "3da75f0e35a26c6fbadd17f16bcb1f2f8f68081e94a5b2f858cfe9e4ede9d3da"
+    },
+    "B_band_n1000_d70.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 70.0244,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 700244,
+      "sha256": "4fe2b6bf9cb52a35fa56eed23d43668477fb573d754c0189b34f76de72676515"
+    },
+    "B_band_n1000_d70.csr": {
+      "bytes": 8410956,
+      "density_pct_actual": 70.0244,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 700244,
+      "sha256": "9b615fb35f7d3ccbbda0b59663ab8bc448a825bc95d336c3acc9b512fe8f5f12"
+    },
+    "B_band_n1000_d90.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 900144,
+      "sha256": "783206b7bb61f110b29c152b06551d1a37f1540890d97b106345c6de24fc69e5"
+    },
+    "B_band_n1000_d90.csr": {
+      "bytes": 10809756,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 1000,
+      "nnz": 900144,
+      "sha256": "6fdcf1454c8bda8aa5be3fca53e7c0dc707b268c9f18c5748c3ef8a6e85b87f0"
+    },
+    "B_band_n2000_d0.1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.099975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3999,
+      "sha256": "6aa9fbbf4508392628e111c18628bf0ec893cc00eb17cc8ce154c0fc32e5c2f5"
+    },
+    "B_band_n2000_d0.1.csr": {
+      "bytes": 64016,
+      "density_pct_actual": 0.099975,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3999,
+      "sha256": "38a814f66e3baad2cd3ed199560334cad79f2d252802f0806bd77d2240ca03c1"
+    },
+    "B_band_n2000_d1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 39900,
+      "sha256": "c16c21fc3c0daa7b6725edca88ec781e27e5ef8bb55ddfeed431369ce3538aaf"
+    },
+    "B_band_n2000_d1.csr": {
+      "bytes": 494828,
+      "density_pct_actual": 0.9975,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 39900,
+      "sha256": "cff8d418d5d27733177a6a2f2d15e6520bf4c5ecf6c6f3fbc2c195728624db78"
+    },
+    "B_band_n2000_d10.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 9.98735,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 399494,
+      "sha256": "bec766bd0ac530009ceaefb364ab8066d1ac171791628fc307d0dc2b27380fa9"
+    },
+    "B_band_n2000_d10.csr": {
+      "bytes": 4809956,
+      "density_pct_actual": 9.98735,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 399494,
+      "sha256": "f9f077d55ffb790010bcae61e5e3acca7fc05e00435b9d84f4c484a234e4070c"
+    },
+    "B_band_n2000_d20.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 19.986975,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 799479,
+      "sha256": "f053dacf500b953147af1bc229c0ca99fe6a03eb6d35fcb3eea8895362135bff"
+    },
+    "B_band_n2000_d20.csr": {
+      "bytes": 9609776,
+      "density_pct_actual": 19.986975,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 799479,
+      "sha256": "e14289852d11f430a145dbcf6549a31165065b127fc97ecb4cf1427d49879c79"
+    },
+    "B_band_n2000_d30.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 29.98495,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 1199398,
+      "sha256": "7eb882ad0a47be89f8a1cc04757ab301c9cd8d2c36427db952463a452cfcd625"
+    },
+    "B_band_n2000_d30.csr": {
+      "bytes": 14408804,
+      "density_pct_actual": 29.98495,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 1199398,
+      "sha256": "684250e4e3240de9764fb3a7a28f3e0ad1c418f8862933544d7fcfa6e4d5c76b"
+    },
+    "B_band_n2000_d5.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 4.98625,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 199450,
+      "sha256": "4b5871a5e458b725a7120d09735e9ed37c39f67af9de0644083a092698bd57a8"
+    },
+    "B_band_n2000_d5.csr": {
+      "bytes": 2409428,
+      "density_pct_actual": 4.98625,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 199450,
+      "sha256": "6fcc50b8ab3abc5444647000868ac879c2a38a8d40949d4d673da8d30914737e"
+    },
+    "B_band_n2000_d50.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2000604,
+      "sha256": "ccda121ff6047131d74f538c5d04e34d8f0ba4389adb561926a8677f64b62baa"
+    },
+    "B_band_n2000_d50.csr": {
+      "bytes": 24023276,
+      "density_pct_actual": 50.0151,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2000604,
+      "sha256": "84a4a0dda0098642105d4717eaf25ba20a20a00fff5bc1a2b44f8a9411caaa95"
+    },
+    "B_band_n2000_d70.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 69.997,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2799880,
+      "sha256": "32a346dc4e3ebf182a257557babf94e414a883b004416214e83e27f2c9764efa"
+    },
+    "B_band_n2000_d70.csr": {
+      "bytes": 33614588,
+      "density_pct_actual": 69.997,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 2799880,
+      "sha256": "21176d276bb5f1400342e6b7bdef40d91dda2c60f47e5cd8fea35313e57c712a"
+    },
+    "B_band_n2000_d90.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 89.9986,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3599944,
+      "sha256": "d3cdc2b30095b94fc8a4d38aacfda0b63df20a8d66beced698737cd518b3e19e"
+    },
+    "B_band_n2000_d90.csr": {
+      "bytes": 43215356,
+      "density_pct_actual": 89.9986,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 2000,
+      "nnz": 3599944,
+      "sha256": "dd9c43a08744c900a24378ca6bfdeafab4b9fcbdc5dd89c9dac08144b9312ec7"
+    },
+    "B_band_n500_d0.1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.2,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 500,
+      "sha256": "9662a0dab5b9c15d336ccf4abb1b6a960370040d38aca72bec1f8f36aa29a20d"
+    },
+    "B_band_n500_d0.1.csr": {
+      "bytes": 10028,
+      "density_pct_actual": 0.2,
+      "density_pct_target": 0.1,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 500,
+      "sha256": "520870c7d8aed4c90dd5e3fc9fcfdf461582a311962188acee58004c5991588e"
+    },
+    "B_band_n500_d1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.9976,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 2494,
+      "sha256": "b1d007a151fd0d03b36f06bf3ea01d36dbb52ed991903582ebbc10084a7ffc4c"
+    },
+    "B_band_n500_d1.csr": {
+      "bytes": 33956,
+      "density_pct_actual": 0.9976,
+      "density_pct_target": 1.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 2494,
+      "sha256": "43a4b767d9c34c5fc80adfe84305f0091fc1220dc2ccf1e53aa32baf9303773c"
+    },
+    "B_band_n500_d10.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 9.94,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 24850,
+      "sha256": "0dc5f413d8565a448895c6065549461b79e0a68eb080624bc00b9d4087478a8b"
+    },
+    "B_band_n500_d10.csr": {
+      "bytes": 302228,
+      "density_pct_actual": 9.94,
+      "density_pct_target": 10.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 24850,
+      "sha256": "7d9b0263e9e54c5c3bc3baa7cd403b285ebedf5b3720f07283e1075cfedc708c"
+    },
+    "B_band_n500_d20.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 20.0764,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 50191,
+      "sha256": "1830258f125cef8e60d4c3ac7274190eb15499e07e2222e395daf025e249be8e"
+    },
+    "B_band_n500_d20.csr": {
+      "bytes": 606320,
+      "density_pct_actual": 20.0764,
+      "density_pct_target": 20.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 50191,
+      "sha256": "53322502f7b38d2b80e9019a2585425d94176cbe024f55368327af85887e66b3"
+    },
+    "B_band_n500_d30.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 29.9432,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 74858,
+      "sha256": "de0737e0ca633dfd421cc1af1633357b40f39f3d2bbe1d041a19c4e63d515924"
+    },
+    "B_band_n500_d30.csr": {
+      "bytes": 902324,
+      "density_pct_actual": 29.9432,
+      "density_pct_target": 30.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 74858,
+      "sha256": "0033faefc2dec2c62792716a83bab576de46d124968c070f99809c88c750b9a6"
+    },
+    "B_band_n500_d5.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 4.9376,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 12344,
+      "sha256": "ce4a83fc77fc19929936bfb265312d641ced4725d140be785f6a66776195485a"
+    },
+    "B_band_n500_d5.csr": {
+      "bytes": 152156,
+      "density_pct_actual": 4.9376,
+      "density_pct_target": 5.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 12344,
+      "sha256": "f6e86bc16504f177b9bef39c57ba61c6bcb1ef0ae6f0a8921d9a6371a0555e88"
+    },
+    "B_band_n500_d50.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 50.0152,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 125038,
+      "sha256": "3226d1e34c67e81ccc8626857617344f3bc4f27fe8668d175299c0642764cab9"
+    },
+    "B_band_n500_d50.csr": {
+      "bytes": 1504484,
+      "density_pct_actual": 50.0152,
+      "density_pct_target": 50.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 125038,
+      "sha256": "0ad8bf336654ea5da73965dcf89ea196154959a24cd1bfc7b493a8a804e01b4f"
+    },
+    "B_band_n500_d70.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 69.9696,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 174924,
+      "sha256": "0aeccfab6f9e20129b9fe1c039d3483799aaf103ff1c2cf27d653118005f9aa5"
+    },
+    "B_band_n500_d70.csr": {
+      "bytes": 2103116,
+      "density_pct_actual": 69.9696,
+      "density_pct_target": 70.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 174924,
+      "sha256": "0b3055905a4adb7596dfbb5f9f78e01038b1e7e19b479edf05992bf05162dd54"
+    },
+    "B_band_n500_d90.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 225036,
+      "sha256": "8d288d23f23d74eefeb4a32c425776723c8d58ff6fc9286059f87af345ef18f3"
+    },
+    "B_band_n500_d90.csr": {
+      "bytes": 2704460,
+      "density_pct_actual": 90.0144,
+      "density_pct_target": 90.0,
+      "kind": "sparse-band",
+      "n": 500,
+      "nnz": 225036,
+      "sha256": "86a15b7f8756fde30feace226c1962f1abd518c816f14dfa10d5aaceb9499a5d"
+    },
+    "B_n100.bin": {
+      "bytes": 80000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 100,
+      "sha256": "d9408ac722f7c384318d09ad154c54c27c5fa1305492a618aeae2e757ed04e14"
+    },
+    "B_n1000.bin": {
+      "bytes": 8000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1000,
+      "sha256": "d1a53f5bd8a786a2809bc39e96593990b64c3ac2e72c5340ec62e8ace307fc9f"
+    },
+    "B_n1024.bin": {
+      "bytes": 8388608,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1024,
+      "sha256": "92c6fcd40e34a8184a0c9e9bd9ce4135b169e2a99e6f7bdb1bd7877ac1c8db49"
+    },
+    "B_n1250.bin": {
+      "bytes": 12500000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1250,
+      "sha256": "03d7908bc028495792d4685a0a7c0dbcc912454d5aaea54fac0af642aff3fd13"
+    },
+    "B_n1500.bin": {
+      "bytes": 18000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 1500,
+      "sha256": "b366cebd84556497d6c1cdcdd43fe341c28c8d5fbbe7f4ae9c414f581649405b"
+    },
+    "B_n2000.bin": {
+      "bytes": 32000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 2000,
+      "sha256": "be3d94e19dab7f85a0076045cdb63ebcc41c730d5d312209ef28a1b945bf2605"
+    },
+    "B_n2048.bin": {
+      "bytes": 33554432,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 2048,
+      "sha256": "c90f8e60ee3b6488d4e2bd2a5c121091db24e7e06caea8ed63da46e189146407"
+    },
+    "B_n250.bin": {
+      "bytes": 500000,
+      "kind": "dense-uniform",
+      "n": 250,
+      "sha256": "31cecbcae8a132db44d3489d1b0c1e0eb2e225c37295d1478f6cae0451aa7ff2"
+    },
+    "B_n3000.bin": {
+      "bytes": 72000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 3000,
+      "sha256": "247553c36521e220b838339c4fd7dd38b0dcf7471c99c0b979ea62d27e38f82a"
+    },
+    "B_n4000.bin": {
+      "bytes": 128000000,
+      "kind": "dense-uniform",
+      "n": 4000,
+      "sha256": "fc95a7f101ddc59cbf5615c1cfe8fbfef31e05c28ed5fdbeb6ff98f567c72737"
+    },
+    "B_n500.bin": {
+      "bytes": 2000000,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 500,
+      "sha256": "39ed2a5848e6c6fa30ea4590f3f3e3b9da9437d01132bd5c38bb4914e8b7eac1"
+    },
+    "B_n5000.bin": {
+      "bytes": 200000000,
+      "kind": "dense-uniform",
+      "n": 5000,
+      "sha256": "6e42609bfd8efdefb1153fc2302b9becd546d34cc45e3d02845216c7b44a7984"
+    },
+    "B_n512.bin": {
+      "bytes": 2097152,
+      "identical_to_assignment1": true,
+      "kind": "dense-uniform",
+      "n": 512,
+      "sha256": "028f431cf778b66a403f8e841b9e01a866afc2ef267f7282dd478902e03f98d3"
+    },
+    "B_n6000.bin": {
+      "bytes": 288000000,
+      "kind": "dense-uniform",
+      "n": 6000,
+      "sha256": "234871746b64d0a394d76aafefb57ce11ec6704ce9abb4212f3004f18c45c352"
+    },
+    "B_n750.bin": {
+      "bytes": 4500000,
+      "kind": "dense-uniform",
+      "n": 750,
+      "sha256": "022f32925cca50b9150a160e8d13c442b7e091279d37a89212fbd4fd5db69753"
+    },
+    "B_n8000.bin": {
+      "bytes": 512000000,
+      "kind": "dense-uniform",
+      "n": 8000,
+      "sha256": "a552a34f9a0e554868752c2b5030eb87f1e0551f10ba65644707adbf9cf96630"
+    },
+    "B_unif_n1000_d0.1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.1035,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 1035,
+      "sha256": "b31c72d3614ab83467c58df6ff1cca2b395e09d33869171232d3caf2248c3586"
+    },
+    "B_unif_n1000_d0.1.csr": {
+      "bytes": 20448,
+      "density_pct_actual": 0.1035,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 1035,
+      "sha256": "13c65c5ca4e79bbf43d84208e1894b795849d8d85e3e6f7041e8362178916e76"
+    },
+    "B_unif_n1000_d1.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 0.9886,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 9886,
+      "sha256": "5913f2cabda82989f2cf2d6dad01c7495ecd42db3713ef7c059959b53e25f144"
+    },
+    "B_unif_n1000_d1.csr": {
+      "bytes": 126660,
+      "density_pct_actual": 0.9886,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 9886,
+      "sha256": "9cfb38bd2e268c66a03c0139cf802720f2532924be1792d9860cd8a923a7351c"
+    },
+    "B_unif_n1000_d10.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 9.9609,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 99609,
+      "sha256": "458d234192b9b40b5c2b46d1e57b434512ba56ee2371240a1ee58850d5ffddb1"
+    },
+    "B_unif_n1000_d10.csr": {
+      "bytes": 1203336,
+      "density_pct_actual": 9.9609,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 99609,
+      "sha256": "31d6ea3ad157c6d40871492d65e1cb917ad594bff2a2ec546037aec3de9fcf7a"
+    },
+    "B_unif_n1000_d20.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 20.013,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 200130,
+      "sha256": "444a2cf529d2c92fb409201f31121aba6afda00eb1e0f4f6fe873da7041687ed"
+    },
+    "B_unif_n1000_d20.csr": {
+      "bytes": 2409588,
+      "density_pct_actual": 20.013,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 200130,
+      "sha256": "2f222c0f69f505cb049c0dd1f5d8dc28895118e8b809f837cdaf0f143b82458a"
+    },
+    "B_unif_n1000_d30.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 30.0119,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 300119,
+      "sha256": "93d6b06ae09e10ac13babb3da9775cc9efae266ddd8d62d66d117bb97fc4b399"
+    },
+    "B_unif_n1000_d30.csr": {
+      "bytes": 3609456,
+      "density_pct_actual": 30.0119,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 300119,
+      "sha256": "9f698902bcab9d7e54e1485c35f1a6fef177f0505f7645022b68dcf17df814c2"
+    },
+    "B_unif_n1000_d5.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 4.9922,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 49922,
+      "sha256": "bda6e7d8938507d51b3f7b1b81af6d3be7e6ea5fb3d022dc303d165c0ea1e75b"
+    },
+    "B_unif_n1000_d5.csr": {
+      "bytes": 607092,
+      "density_pct_actual": 4.9922,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 49922,
+      "sha256": "fd2cc2cad61456e298b8ee2b48d17c911f93985f09fe0e96b0eb41dbb0b0a33f"
+    },
+    "B_unif_n1000_d50.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 50.0489,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 500489,
+      "sha256": "72f61ca2ac86888e8fd7e159a1c6e61e0f93155a4491d0bd09cf001e30790975"
+    },
+    "B_unif_n1000_d50.csr": {
+      "bytes": 6013896,
+      "density_pct_actual": 50.0489,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 500489,
+      "sha256": "9392e7557975b5df0786890d4542c599bdc720d73e381ea00e397326d9b65643"
+    },
+    "B_unif_n1000_d70.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 69.9263,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 699263,
+      "sha256": "6c1891c35aeea0f971af85683ee78aa8ccd38ce523c799fbe2a6544bd25e3012"
+    },
+    "B_unif_n1000_d70.csr": {
+      "bytes": 8399184,
+      "density_pct_actual": 69.9263,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 699263,
+      "sha256": "e366597015c1cae0a0537ab594003ad21015db7041141551465374dc02e6de2c"
+    },
+    "B_unif_n1000_d90.bin": {
+      "bytes": 8000000,
+      "density_pct_actual": 90.0004,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 900004,
+      "sha256": "9266ce9b332a026ddf15898a9b159c84713db219090cc78f9d4a6a82436557fc"
+    },
+    "B_unif_n1000_d90.csr": {
+      "bytes": 10808076,
+      "density_pct_actual": 90.0004,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 1000,
+      "nnz": 900004,
+      "sha256": "947ab200d715979e2a9c209584249946ad4bc6f632ce2f03729df57a3e0ae96a"
+    },
+    "B_unif_n128000_d0.1.csr": {
+      "bytes": 197644700,
+      "density_pct_actual": 0.1000064453125,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 128000,
+      "nnz": 16385056,
+      "sha256": "c816fc62d91544b7c695fe14713d194ba715de21d9e9b1a37662b5b37c3fe886"
+    },
+    "B_unif_n16000_d0.1.csr": {
+      "bytes": 3204528,
+      "density_pct_actual": 0.100146484375,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 16000,
+      "nnz": 256375,
+      "sha256": "d21cda321c15c01fbc608d61efa5f07f7e4757863b1e13ca15615a39e8ff4fba"
+    },
+    "B_unif_n16000_d1.csr": {
+      "bytes": 30845268,
+      "density_pct_actual": 0.99991015625,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 16000,
+      "nnz": 2559770,
+      "sha256": "4b3d09c01eefff7f81fea2be80075740883112360567e40cd883c6e0aed4b48d"
+    },
+    "B_unif_n2000_d0.1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 0.1004,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 4016,
+      "sha256": "1e16a77ad13291e4d49af2918aad71b02f3e4f703d280dca859fa1b770de87d3"
+    },
+    "B_unif_n2000_d0.1.csr": {
+      "bytes": 64220,
+      "density_pct_actual": 0.1004,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 4016,
+      "sha256": "bbb71f921539f56ea47fc3b9488fafa7cd3d2a5fbac1e4006ac426c406661a90"
+    },
+    "B_unif_n2000_d1.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 1.005275,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 40211,
+      "sha256": "6873df3bb6568435cab028c2d736ad3bf6fb98447fbf92f147d5c75a387d152b"
+    },
+    "B_unif_n2000_d1.csr": {
+      "bytes": 498560,
+      "density_pct_actual": 1.005275,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 40211,
+      "sha256": "e454112eaf721ab837f6ed0adea82325e19e06ffe069dfc2cf66b6d3fdf8eb91"
+    },
+    "B_unif_n2000_d10.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 9.997125,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 399885,
+      "sha256": "e021d6b8e0fcbfc7659fb6be828198d9df919213a956b0d821ba76e73b0a44e5"
+    },
+    "B_unif_n2000_d10.csr": {
+      "bytes": 4814648,
+      "density_pct_actual": 9.997125,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 399885,
+      "sha256": "0ef4876ac4e28db8a04affd2abafdb4cf4a0f27ec556e7b0e7e6891389a64687"
+    },
+    "B_unif_n2000_d20.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 20.01725,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 800690,
+      "sha256": "a34b9c60c60823f30b2e32731a735ae05af286f4db853bbadce69f30aa5ffcf4"
+    },
+    "B_unif_n2000_d20.csr": {
+      "bytes": 9624308,
+      "density_pct_actual": 20.01725,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 800690,
+      "sha256": "a8c2872db78b88e9a604be4d8fb1fbf3cba822164aaf41781c5592dd90f89af7"
+    },
+    "B_unif_n2000_d30.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 29.9958,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1199832,
+      "sha256": "3b6c6d267b006b3907fcae56cb8faae3924149154f3fc2fd9e8efc40954db47a"
+    },
+    "B_unif_n2000_d30.csr": {
+      "bytes": 14414012,
+      "density_pct_actual": 29.9958,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1199832,
+      "sha256": "bf156206a1bd11cdefbfe6a78151112b5bcb4b1cf784e2cb935b9e90bc26e346"
+    },
+    "B_unif_n2000_d5.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 5.001175,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 200047,
+      "sha256": "6f9f1f70212ccd4abd96e32d7f36247c38f2558b1d114edfb72c67b740aa25b3"
+    },
+    "B_unif_n2000_d5.csr": {
+      "bytes": 2416592,
+      "density_pct_actual": 5.001175,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 200047,
+      "sha256": "61fe50bd62241336292c7e6dfc620e86b4d3de723462260325636c3fba29a5f8"
+    },
+    "B_unif_n2000_d50.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 49.985625,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1999425,
+      "sha256": "38a75ee3b40861dc96c8935ad2f8773027c0de2d139309329195f6584e222f40"
+    },
+    "B_unif_n2000_d50.csr": {
+      "bytes": 24009128,
+      "density_pct_actual": 49.985625,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 1999425,
+      "sha256": "1f316925326657486d067b6e857efc89c9bf404f497c781820bec8a582131bcf"
+    },
+    "B_unif_n2000_d70.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 69.993325,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 2799733,
+      "sha256": "59ce7eb02fa37b6902aec5ebc7cdff9b75ce332eb245149c01efc80136d356d7"
+    },
+    "B_unif_n2000_d70.csr": {
+      "bytes": 33612824,
+      "density_pct_actual": 69.993325,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 2799733,
+      "sha256": "50250531ce5108910f7fdf1b20702db3f0cfbacf4124481b722646834d720fd4"
+    },
+    "B_unif_n2000_d90.bin": {
+      "bytes": 32000000,
+      "density_pct_actual": 90.013925,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3600557,
+      "sha256": "cb9e5c8fc6a720603281a207e43145944dd7614f50fab4e26ec123228f541d61"
+    },
+    "B_unif_n2000_d90.csr": {
+      "bytes": 43222712,
+      "density_pct_actual": 90.013925,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 2000,
+      "nnz": 3600557,
+      "sha256": "e930e879ba486c6f12da86ea159ef56cf56ff0dd8a2fa97a916cd82c54c8d1d4"
+    },
+    "B_unif_n32000_d0.1.csr": {
+      "bytes": 12526676,
+      "density_pct_actual": 0.0998587890625,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 32000,
+      "nnz": 1022554,
+      "sha256": "5ab3555547ee02bb35f0e1e0880b085d95835ec514b7c6ded6e16ea9af3362f1"
+    },
+    "B_unif_n32000_d1.csr": {
+      "bytes": 123218696,
+      "density_pct_actual": 1.00067275390625,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 32000,
+      "nnz": 10246889,
+      "sha256": "656b94f9117853c9788e740979b6794baff30098ce0d5c2f58a99a87c6cda1b2"
+    },
+    "B_unif_n4000_d0.1.csr": {
+      "bytes": 224508,
+      "density_pct_actual": 0.10025,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 4000,
+      "nnz": 16040,
+      "sha256": "ab4e5de5d5d64c75b83af0d640162ff63f4e690fae278568ed4134d86b8270f9"
+    },
+    "B_unif_n4000_d1.csr": {
+      "bytes": 1946808,
+      "density_pct_actual": 0.99728125,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 4000,
+      "nnz": 159565,
+      "sha256": "e44628ec96cc4a0e6ed7ea081074f191d7fb5f81222a76b3bda4676eace44851"
+    },
+    "B_unif_n500_d0.1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 0.0996,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 249,
+      "sha256": "0a14b40c12ed92b2ce554fe264832a055505a49fe13e1506526c8a29d0fa3d86"
+    },
+    "B_unif_n500_d0.1.csr": {
+      "bytes": 7016,
+      "density_pct_actual": 0.0996,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 249,
+      "sha256": "51cdf7820aa66cab8b26326f953d589c113d390387b0f73e2c2c2b01df2b180c"
+    },
+    "B_unif_n500_d1.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 1.0248,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 2562,
+      "sha256": "5bca8a0d4149e859c26bf5c1a27d26081eb498397b67fa0ea66684387fbb8984"
+    },
+    "B_unif_n500_d1.csr": {
+      "bytes": 34772,
+      "density_pct_actual": 1.0248,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 2562,
+      "sha256": "c21d56186b907983399ae47cd0292994520e1c2604ab28216cebaa594e3f0402"
+    },
+    "B_unif_n500_d10.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 10.038,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 25095,
+      "sha256": "e6c1afc4f50db543256ee3414b0a4fff84e2168dd865c376016904ccb286682d"
+    },
+    "B_unif_n500_d10.csr": {
+      "bytes": 305168,
+      "density_pct_actual": 10.038,
+      "density_pct_target": 10.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 25095,
+      "sha256": "dc0f780667434e55fc195daab82bd79ab02f83b690c28797b5898f41ece55af0"
+    },
+    "B_unif_n500_d20.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 19.978,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 49945,
+      "sha256": "06a2485d3c009b48e667fb3d57347dcbf8e19f12768687121ef4a43439d92f82"
+    },
+    "B_unif_n500_d20.csr": {
+      "bytes": 603368,
+      "density_pct_actual": 19.978,
+      "density_pct_target": 20.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 49945,
+      "sha256": "fcd9d401f11d02492095114d0b16f8094fbe73c2577f57e3a8bb793c285a66ac"
+    },
+    "B_unif_n500_d30.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 29.9924,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 74981,
+      "sha256": "74b24d475c0f53d9904e573b58e4e59f9c8a9f2f50d3c01921b3a140b0ba2092"
+    },
+    "B_unif_n500_d30.csr": {
+      "bytes": 903800,
+      "density_pct_actual": 29.9924,
+      "density_pct_target": 30.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 74981,
+      "sha256": "305750f1a51cca4e6e967783905e3acd7eb71cbb5c86e66ed3c14383cbd10f0d"
+    },
+    "B_unif_n500_d5.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 5.0012,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 12503,
+      "sha256": "88dad71ff182c94f0dee25ea7a4eab1a8b34c4225cd8ba0586e63f4dec89bbd0"
+    },
+    "B_unif_n500_d5.csr": {
+      "bytes": 154064,
+      "density_pct_actual": 5.0012,
+      "density_pct_target": 5.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 12503,
+      "sha256": "107d580d222c966077ed674a70c86ec57b883d0583cf2e1b49280866018bb460"
+    },
+    "B_unif_n500_d50.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 49.9804,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 124951,
+      "sha256": "21f6f427dda3f3b414a87e48e643468b542f8123d9e1311aa897e6b4bb4453bc"
+    },
+    "B_unif_n500_d50.csr": {
+      "bytes": 1503440,
+      "density_pct_actual": 49.9804,
+      "density_pct_target": 50.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 124951,
+      "sha256": "381050f4936feddde33c2a95776c86471f3e7b576eac2b229cd86dcd9468d29e"
+    },
+    "B_unif_n500_d70.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 69.8728,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 174682,
+      "sha256": "365685426bafe234762d09488b259bbf450bf1f847c3fc4e56bde5f585905529"
+    },
+    "B_unif_n500_d70.csr": {
+      "bytes": 2100212,
+      "density_pct_actual": 69.8728,
+      "density_pct_target": 70.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 174682,
+      "sha256": "7ef030069976d8e22d9dab4a2b4744ea5bc7922e525181245f199ffb562401d4"
+    },
+    "B_unif_n500_d90.bin": {
+      "bytes": 2000000,
+      "density_pct_actual": 89.9404,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 224851,
+      "sha256": "e501b068cf35567de37939e8e45353daa727533d5a13bcca160faee4bb149af8"
+    },
+    "B_unif_n500_d90.csr": {
+      "bytes": 2702240,
+      "density_pct_actual": 89.9404,
+      "density_pct_target": 90.0,
+      "kind": "sparse-unif",
+      "n": 500,
+      "nnz": 224851,
+      "sha256": "0fffdb0642b8f2608a3d8f980ec4f4387cf38c7cc7a1d374101399e005b341bc"
+    },
+    "B_unif_n64000_d0.1.csr": {
+      "bytes": 49668468,
+      "density_pct_actual": 0.100009033203125,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 64000,
+      "nnz": 4096370,
+      "sha256": "6447b63e17fe63c43bc115285df882aa6ec9326eb6a96dbbcd22685d54cd2650"
+    },
+    "B_unif_n8000_d0.1.csr": {
+      "bytes": 830012,
+      "density_pct_actual": 0.0997375,
+      "density_pct_target": 0.1,
+      "kind": "sparse-unif",
+      "n": 8000,
+      "nnz": 63832,
+      "sha256": "7d55a274a2d357a99711a878d8a18e62102db450f59df9f8b729f6eb443d2fa1"
+    },
+    "B_unif_n8000_d1.csr": {
+      "bytes": 7752992,
+      "density_pct_actual": 1.0011671875,
+      "density_pct_target": 1.0,
+      "kind": "sparse-unif",
+      "n": 8000,
+      "nnz": 640747,
+      "sha256": "2ef2d072c5897f9ea03fd42a21234266017d029d6fb1bfeba4360fedfcbda025"
+    }
+  },
+  "generator": "numpy.random.default_rng(PCG64), seed list [seed, n, which, (struct, 10*density)]",
+  "numpy_version": "2.5.3",
+  "seed": 20261012
+}
