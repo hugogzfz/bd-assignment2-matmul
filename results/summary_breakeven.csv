@@ -1,0 +1,13 @@
+n,structure,boundary,breakeven_density_pct,sparse_faster_at_all_tested,sparse_slower_at_all_tested,max_density_tested,speedup_at_max_density
+500,band,kernel only,85.09401160308177,False,False,90.0,0.8963769413802309
+500,band,kernel + conversion,83.4684890596165,False,False,90.0,0.8661876589169184
+500,unif,kernel only,82.1979934124149,False,False,90.0,0.8234406358756868
+500,unif,kernel + conversion,80.19508423250986,False,False,90.0,0.7931896266843987
+1000,band,kernel only,86.9009726789637,False,False,90.0,0.930057124252887
+1000,band,kernel + conversion,86.17148669867278,False,False,90.0,0.915123014281737
+1000,unif,kernel only,86.08934921128417,False,False,90.0,0.9207338925258307
+1000,unif,kernel + conversion,85.1224255985513,False,False,90.0,0.9049845853674114
+2000,band,kernel only,76.1874815299639,False,False,90.0,0.6425330002696064
+2000,band,kernel + conversion,75.96728144865732,False,False,90.0,0.6391004756238675
+2000,unif,kernel only,72.07016628305725,False,False,90.0,0.6152702889331704
+2000,unif,kernel + conversion,71.67336437870804,False,False,90.0,0.6110942780086416
