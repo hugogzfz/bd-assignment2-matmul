@@ -15,19 +15,21 @@ needed to rebuild and re-run the study. Everything is sequential and single-thre
 ## 1. Layout
 
 ```
-src/c/matmul2.c            all methods: ijk (A1 baseline, unchanged), ikj, blocked, csr, csrfile
-scripts/gen_inputs.py      dense (A1 files, digests checked against Assignment 1) and sparse inputs (seeded)
-scripts/test_correctness.py   377 checks: known answers, NumPy/SciPy references, bitwise equality, edge cases, repeatability
-scripts/run_benchmarks.py  measurement driver (campaigns: bsweep, dense, flags, procvar, sparse, scale)
-scripts/env_info.py        environment -> results/environment.json
-scripts/vec_evidence.py    gcc vectorisation report for each flag set
-scripts/analyze.py         summaries, LaTeX tables, figures
-scripts/run_all_benchmarks.sh   the whole campaign chain, sequentially
-results/                   raw_measurements.csv (every sample), runs.csv (one row per process), summary_*.csv, logs, environment.json
-figures/  report/         figures and LaTeX sources of the report
-data/manifest.json        SHA-256 and nnz of every input (the .bin / .csr files are NOT committed)
-data/a1_reference_sha256.json   digests of the Assignment 1 inputs
+src/c/matmul2.c               all methods: ijk (A1 baseline, unchanged), ikj, blocked, csr, csrfile
+scripts/gen_inputs.py         generates the input matrices and checks them against data/manifest.json
+scripts/test_correctness.py   correctness tests (377 checks)
+scripts/run_benchmarks.py     measurement driver
+scripts/analyze.py            summaries, LaTeX tables and figures
+scripts/env_info.py, vec_evidence.py   environment record, SIMD evidence
+results/                      raw_measurements.csv (every sample), runs.csv (one row per process), summary_*.csv
+figures/, report/             figures and LaTeX sources of the report
+data/                         only fingerprints of the inputs (see below); the matrices themselves are generated
 ```
+
+**What is in `data/`.** The input matrices (about 5 GB) are not in the repository; `make inputs` regenerates them.
+`manifest.json` stores, for every generated file, its SHA-256 fingerprint, size, n and number of nonzeros, so a
+regenerated file can be checked to be byte-identical to the one measured. `a1_reference_sha256.json` holds the
+fingerprints of the Assignment 1 inputs, used to check that the dense matrices are exactly the same as in Assignment 1.
 
 ## 2. Requirements (as used)
 

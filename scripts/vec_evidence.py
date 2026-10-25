@@ -1,15 +1,6 @@
 #!/usr/bin/env python3
-"""
-Evidence of (non-)vectorisation of the multiplication kernels, per compiler configuration.
-
-For every build variant it
-  1. recompiles src/c/matmul2.c with `-fopt-info-vec-optimized -fopt-info-vec-missed` and stores the compiler
-     report in results/gcc_vec_report_<variant>.txt (which loops gcc says it vectorised),
-  2. disassembles the kernel functions of the benchmarked binary (objdump) and counts multiply instructions:
-     packed (mulpd / vmulpd, SIMD) versus scalar (mulsd / vmulsd), fused multiply-add (vfmadd*), and the widest
-     vector register used (xmm = 128 bit, ymm = 256 bit, zmm = 512 bit).
-Output: results/vectorization_evidence.csv. This is evidence about the generated code; it does not time anything.
-"""
+"""Counts packed (SIMD) vs scalar multiply instructions in each kernel for every compiler-flag build
+(objdump) -> results/vectorization_evidence.csv."""
 import csv
 import re
 import subprocess
@@ -27,11 +18,6 @@ def exe(v):
 def main():
     out_rows = []
     for v, fl in FLAGS.items():
-        rep = subprocess.run("gcc %s -std=c11 -ffp-contract=off -fopt-info-vec-optimized -fopt-info-vec-missed "
-                             "-c -o /dev/null %s" % (fl, ROOT / "src/c/matmul2.c"),
-                             shell=True, capture_output=True, text=True).stderr
-        (ROOT / "results").mkdir(exist_ok=True)
-        (ROOT / "results" / ("gcc_vec_report_%s.txt" % v)).write_text(rep)
         asm = subprocess.run(["objdump", "-d", "--no-show-raw-insn", "-M", "intel", str(exe(v))],
                              capture_output=True, text=True).stdout
         funcs = {}

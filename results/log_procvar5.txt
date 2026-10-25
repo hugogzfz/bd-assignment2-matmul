@@ -1,3 +1,0 @@
-[procvar5] ijk              n=1000              reps=5 warm=1 batch=1 t_est=2.5 s ... ok, median=1.539 s, peak RSS=24.7 MiB, check=pass
-[procvar5] ikj              n=1000              reps=5 warm=1 batch=1 t_est=1.2 s ... ok, median=0.7282 s, peak RSS=24.7 MiB, check=pass
-[procvar5] blocked          n=1000              reps=10 warm=3 batch=1 t_est=1 s ... ok, median=0.7525 s, peak RSS=24.7 MiB, check=pass

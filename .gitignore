@@ -13,3 +13,10 @@ report/*.toc
 report/*.bbl
 report/*.blg
 results_quick/
+results/log_*.txt
+results/campaign_*.json
+results/ALL_DONE.txt
+figures/*.png
+report/report.pdf
+report/*.fls
+report/*.fdb_latexmk
