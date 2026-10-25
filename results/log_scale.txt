@@ -1,0 +1,12 @@
+[scale] csrfile          n=2000   unif d0.1  reps=10 warm=3 batch=9 t_est=0.0122 s ... ok, median=0.0001192 s, peak RSS=2.0 MiB, check=pass
+[scale] csrfile          n=2000   unif d1    reps=10 warm=3 batch=6 t_est=0.0196 s ... ok, median=0.02055 s, peak RSS=17.2 MiB, check=pass
+[scale] csrfile          n=4000   unif d0.1  reps=10 warm=3 batch=81 t_est=0.00124 s ... ok, median=0.001922 s, peak RSS=4.1 MiB, check=pass
+[scale] csrfile          n=4000   unif d1    reps=10 warm=3 batch=1 t_est=0.214 s ... ok, median=0.109 s, peak RSS=65.8 MiB, check=pass
+[scale] csrfile          n=8000   unif d0.1  reps=10 warm=3 batch=6 t_est=0.02 s ... ok, median=0.0295 s, peak RSS=13.8 MiB, check=pass
+[scale] csrfile          n=8000   unif d1    reps=5 warm=1 batch=1 t_est=1.13 s ... ok, median=0.8108 s, peak RSS=420.0 MiB, check=pass
+[scale] csrfile          n=16000  unif d0.1  reps=10 warm=3 batch=1 t_est=0.307 s ... ok, median=0.2785 s, peak RSS=96.1 MiB, check=pass
+[scale] csrfile          n=16000  unif d1    reps=5 warm=1 batch=1 t_est=8.43 s ... ok, median=4.288 s, peak RSS=2398.4 MiB, check=pass
+[scale] csrfile          n=32000  unif d0.1  reps=5 warm=1 batch=1 t_est=2.9 s ... ok, median=2.257 s, peak RSS=394.6 MiB, check=pass
+[scale] csrfile          n=32000  unif not attempted (predicted memory exceeds 3x the 4 GiB budget)
+[scale] csrfile          n=64000  unif d0.1  reps=5 warm=1 batch=1 t_est=23.5 s ... ok, median=13.99 s, peak RSS=3004.4 MiB, check=pass
+[scale] csrfile          n=128000 unif not attempted (predicted memory exceeds 3x the 4 GiB budget)

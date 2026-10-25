@@ -1,0 +1,38 @@
+{
+  "campaign": "procvar3",
+  "sizes": [
+    1000
+  ],
+  "configs": [
+    "blocked",
+    "ijk",
+    "ikj"
+  ],
+  "block_size": 96,
+  "t_mult_s": 300.0,
+  "mem_budget_kib": 4194304,
+  "as_limit_bytes": 4563402752,
+  "densities_pct": [
+    0.1,
+    1,
+    5,
+    10,
+    20,
+    30,
+    50,
+    70,
+    90
+  ],
+  "structures": [
+    "unif",
+    "band"
+  ],
+  "cflags": {
+    "O2": "-O2 -std=c11 -ffp-contract=off",
+    "O2-unroll": "-O2 -funroll-loops -std=c11 -ffp-contract=off",
+    "O3": "-O3 -std=c11 -ffp-contract=off",
+    "O3-native": "-O3 -march=native -std=c11 -ffp-contract=off"
+  },
+  "rep_policy": "t_est<=1s:10 reps+3 warmup; <=30s:5+1; <=120s:3+0; else 2+0",
+  "batch_policy": "batch=ceil(0.1 s / t_est) when t_est<0.05 s, else 1"
+}
