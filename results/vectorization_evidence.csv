@@ -1,0 +1,17 @@
+variant,flags,function,instructions,packed_mul,scalar_mul,fused_multiply_add,widest_vector_register
+O2,-O2 -std=c11 -ffp-contract=off,mul_ijk,46,0,1,0,xmm
+O2,-O2 -std=c11 -ffp-contract=off,mul_ikj,59,0,1,0,xmm
+O2,-O2 -std=c11 -ffp-contract=off,mul_blocked,139,0,1,0,xmm
+O2,-O2 -std=c11 -ffp-contract=off,csr_multiply,332,0,1,0,xmm
+O2-unroll,-O2 -funroll-loops -std=c11 -ffp-contract=off,mul_ijk,131,0,15,0,xmm
+O2-unroll,-O2 -funroll-loops -std=c11 -ffp-contract=off,mul_ikj,139,0,15,0,xmm
+O2-unroll,-O2 -funroll-loops -std=c11 -ffp-contract=off,mul_blocked,234,0,15,0,xmm
+O2-unroll,-O2 -funroll-loops -std=c11 -ffp-contract=off,csr_multiply,736,0,7,0,xmm
+O3,-O3 -std=c11 -ffp-contract=off,mul_ijk,87,1,1,0,xmm
+O3,-O3 -std=c11 -ffp-contract=off,mul_ikj,148,3,3,0,xmm
+O3,-O3 -std=c11 -ffp-contract=off,mul_blocked,274,3,3,0,xmm
+O3,-O3 -std=c11 -ffp-contract=off,csr_multiply,384,0,1,0,xmm
+O3-native,-O3 -march=native -std=c11 -ffp-contract=off,mul_ijk,86,1,1,0,xmm
+O3-native,-O3 -march=native -std=c11 -ffp-contract=off,mul_ikj,205,6,3,0,ymm
+O3-native,-O3 -march=native -std=c11 -ffp-contract=off,mul_blocked,327,6,3,0,ymm
+O3-native,-O3 -march=native -std=c11 -ffp-contract=off,csr_multiply,422,0,1,0,ymm

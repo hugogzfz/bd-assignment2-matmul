@@ -1,0 +1,240 @@
+/home/claude/matmul-assignment2/src/c/matmul2.c:86:26: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:86:26: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:87:30: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:90:38: missed: not vectorized: not suitable for strided load _10 = *_9;
+/home/claude/matmul-assignment2/src/c/matmul2.c:89:34: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:90:23: missed: not vectorized: no vectype for stmt: _5 = *_4;
+ scalar_type: const double
+/home/claude/matmul-assignment2/src/c/matmul2.c:101:26: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:101:26: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:104:30: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:108:23: missed: not vectorized: complicated access pattern.
+/home/claude/matmul-assignment2/src/c/matmul2.c:107:34: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:108:19: missed: not vectorized: no vectype for stmt: _10 = *_9;
+ scalar_type: double
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (ci_25, 0, _3);
+/home/claude/matmul-assignment2/src/c/matmul2.c:119:28: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:119:28: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:121:32: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:121:32: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:123:36: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:123:36: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:125:39: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:125:39: missed: not vectorized: multiple nested loops.
+/home/claude/matmul-assignment2/src/c/matmul2.c:127:43: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:127:43: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:130:47: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:131:31: missed: not vectorized: no vectype for stmt: _12 = *_11;
+ scalar_type: double
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (c_32(D), 0, _2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:5: missed: statement clobbers memory: free (_1);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:19: missed: statement clobbers memory: free (_2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:33: missed: statement clobbers memory: free (_3);
+/home/claude/matmul-assignment2/src/c/matmul2.c:158:12: optimized: basic block part vectorized using 16 byte vectors
+/home/claude/matmul-assignment2/src/c/matmul2.c:53:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:200:12: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:200:12: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:307:15: missed: statement clobbers memory: f_12 = fopen ("/proc/self/status", "r");
+/home/claude/matmul-assignment2/src/c/matmul2.c:311:17: missed: statement clobbers memory: kl_14 = strlen (key_13(D));
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:200:12: missed: statement clobbers memory: _19 = __fgets_alias (&line, 256, f_12);
+/home/claude/matmul-assignment2/src/c/matmul2.c:313:13: missed: statement clobbers memory: _1 = strncmp (&line, key_13(D), kl_14);
+/home/claude/matmul-assignment2/src/c/matmul2.c:314:19: missed: statement clobbers memory: val_16 = strtol (_4, 0B, 10);
+/home/claude/matmul-assignment2/src/c/matmul2.c:318:5: missed: statement clobbers memory: fclose (f_12);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.25_1, 2, "out of memory (%s)\n", what_3(D));
+/home/claude/matmul-assignment2/src/c/matmul2.c:59:5: missed: statement clobbers memory: exit (3);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_5 = malloc (_1);
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom (what_6(D));
+/home/claude/matmul-assignment2/src/c/matmul2.c:70:15: missed: statement clobbers memory: f_11 = fopen (path_9(D), "rb");
+/home/claude/matmul-assignment2/src/c/matmul2.c:72:17: missed: statement clobbers memory: m_14 = xmalloc (_6, "dense input");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _25 = __fread_alias (m_14, 8, powmult_19, f_11);
+/home/claude/matmul-assignment2/src/c/matmul2.c:77:5: missed: statement clobbers memory: fclose (f_11);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.27_7, 2, "short read on %s (expected %zu doubles)\n", path_9(D), powmult_19);
+/home/claude/matmul-assignment2/src/c/matmul2.c:75:9: missed: statement clobbers memory: exit (2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:71:15: missed: statement clobbers memory: _3 = strerror (_2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.26_4, 2, "cannot open %s: %s\n", path_9(D), _3);
+/home/claude/matmul-assignment2/src/c/matmul2.c:71:79: missed: statement clobbers memory: exit (2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:188:15: missed: statement clobbers memory: f_26 = fopen (path_24(D), "rb");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _37 = __fread_alias (&magic, 1, 4, f_26);
+/home/claude/matmul-assignment2/src/c/matmul2.c:192:39: missed: statement clobbers memory: _5 = memcmp (&magic, "CSR1", 4);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _39 = __fread_alias (&hdr, 8, 2, f_26);
+/home/claude/matmul-assignment2/src/c/matmul2.c:198:13: missed: statement clobbers memory: _12 = xmalloc (_11, "csr ptr");
+/home/claude/matmul-assignment2/src/c/matmul2.c:199:13: missed: statement clobbers memory: _15 = xmalloc (_14, "csr idx");
+/home/claude/matmul-assignment2/src/c/matmul2.c:200:13: missed: statement clobbers memory: _17 = xmalloc (_16, "csr val");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _47 = __fread_alias (_12, 8, _19, f_26);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _57 = __fread_alias (_15, 4, _13, f_26);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:212:12: missed: statement clobbers memory: _67 = __fread_alias (_17, 8, _13, f_26);
+/home/claude/matmul-assignment2/src/c/matmul2.c:206:5: missed: statement clobbers memory: fclose (f_26);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.30_20, 2, "short read on %s\n", path_24(D));
+/home/claude/matmul-assignment2/src/c/matmul2.c:204:54: missed: statement clobbers memory: exit (2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.29_6, 2, "bad CSR header in %s\n", path_24(D));
+/home/claude/matmul-assignment2/src/c/matmul2.c:194:58: missed: statement clobbers memory: exit (2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:189:15: missed: statement clobbers memory: _3 = strerror (_2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.28_4, 2, "cannot open %s: %s\n", path_24(D), _3);
+/home/claude/matmul-assignment2/src/c/matmul2.c:189:79: missed: statement clobbers memory: exit (2);
+/home/claude/matmul-assignment2/src/c/matmul2.c:207:12: missed: not vectorized: vectorization is not profitable.
+/home/claude/matmul-assignment2/src/c/matmul2.c:207:12: optimized: basic block part vectorized using 16 byte vectors
+/home/claude/matmul-assignment2/src/c/matmul2.c:177:26: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:177:26: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:179:30: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:179:30: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:168:26: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:170:51: missed: not vectorized: complicated access pattern.
+/home/claude/matmul-assignment2/src/c/matmul2.c:170:30: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:170:51: missed: not vectorized: no vectype for stmt: _7 = *_6;
+ scalar_type: const double
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_68 = malloc (_67);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_72 = malloc (prephitmp_118);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_70 = malloc (_69);
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("csr val");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("csr idx");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("csr ptr");
+/home/claude/matmul-assignment2/src/c/matmul2.c:183:12: missed: not vectorized: vectorization is not profitable.
+/home/claude/matmul-assignment2/src/c/matmul2.c:183:12: missed: not vectorized: vectorization is not profitable.
+/home/claude/matmul-assignment2/src/c/matmul2.c:260:27: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:260:27: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+/home/claude/matmul-assignment2/src/c/matmul2.c:282:35: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:282:35: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:287:35: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:288:53: missed: not vectorized: no vectype for stmt: _98 = *_95;
+ scalar_type: double
+/home/claude/matmul-assignment2/src/c/matmul2.c:229:31: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:229:31: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:231:31: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:231:31: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:260:39: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:260:39: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:263:43: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:263:43: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_199 = malloc (_198);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_197 = malloc (_196);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_195 = malloc (_194);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_193 = malloc (_192);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_191 = malloc (_190);
+/home/claude/matmul-assignment2/src/c/matmul2.c:63:15: missed: statement clobbers memory: p_189 = malloc (_190);
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin___memset_chk (p_191, 255, _16, _190);
+/home/claude/matmul-assignment2/src/c/matmul2.c:273:27: missed: statement clobbers memory: ni_148 = realloc (C$idx_266, _69);
+/home/claude/matmul-assignment2/src/c/matmul2.c:276:26: missed: statement clobbers memory: nv_151 = realloc (C$val_268, _70);
+/home/claude/matmul-assignment2/src/c/matmul2.c:235:9: missed: statement clobbers memory: qsort (p_189, _153, 4, cmp_i32);
+/home/claude/matmul-assignment2/src/c/matmul2.c:294:5: missed: statement clobbers memory: free (p_193);
+/home/claude/matmul-assignment2/src/c/matmul2.c:294:16: missed: statement clobbers memory: free (p_191);
+/home/claude/matmul-assignment2/src/c/matmul2.c:294:28: missed: statement clobbers memory: free (p_189);
+/home/claude/matmul-assignment2/src/c/matmul2.c:277:22: missed: statement clobbers memory: die_oom ("C val growth");
+/home/claude/matmul-assignment2/src/c/matmul2.c:274:22: missed: statement clobbers memory: die_oom ("C idx growth");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("workspace cols");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("workspace flag");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("workspace acc");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("C val");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("C idx");
+/home/claude/matmul-assignment2/src/c/matmul2.c:64:13: missed: statement clobbers memory: die_oom ("C ptr");
+/home/claude/matmul-assignment2/src/c/matmul2.c:295:12: missed: not vectorized: vectorization is not profitable.
+/home/claude/matmul-assignment2/src/c/matmul2.c:295:12: optimized: basic block part vectorized using 16 byte vectors
+/home/claude/matmul-assignment2/src/c/matmul2.c:363:27: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:363:27: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+/home/claude/matmul-assignment2/src/c/matmul2.c:143:26: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:143:46: missed: not vectorized: no vectype for stmt: _195 = *_194;
+ scalar_type: const double
+/home/claude/matmul-assignment2/src/c/matmul2.c:365:32: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:365:32: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:409:12: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:409:12: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+/home/claude/matmul-assignment2/src/c/matmul2.c:326:23: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:326:23: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:329:39: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:329:72: missed: not vectorized: no vectype for stmt: _254 = *_253;
+ scalar_type: double
+/home/claude/matmul-assignment2/src/c/matmul2.c:301:27: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:301:53: missed: not vectorized: no vectype for stmt: _204 = *_203;
+ scalar_type: double
+/home/claude/matmul-assignment2/src/c/matmul2.c:418:28: missed: couldn't vectorize loop
+/home/claude/matmul-assignment2/src/c/matmul2.c:418:28: missed: not vectorized: control flow in loop.
+/home/claude/matmul-assignment2/src/c/matmul2.c:341:16: missed: statement clobbers memory: n_111 = strtoull (_3, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _188 = strtol (_4, 0B, 10);
+/usr/include/stdlib.h:483:16: missed: statement clobbers memory: _186 = strtol (_5, 0B, 10);
+/usr/include/stdlib.h:488:10: missed: statement clobbers memory: _175 = strtol (_6, 0B, 10);
+/home/claude/matmul-assignment2/src/c/matmul2.c:346:24: missed: statement clobbers memory: _8 = strcmp (_7, "-");
+/home/claude/matmul-assignment2/src/c/matmul2.c:347:30: missed: statement clobbers memory: iftmp.2_113 = strtoull (_9, 0B, 10);
+/home/claude/matmul-assignment2/src/c/matmul2.c:348:20: missed: statement clobbers memory: _10 = strcmp (method_109, "ijk");
+/home/claude/matmul-assignment2/src/c/matmul2.c:348:46: missed: statement clobbers memory: _11 = strcmp (method_109, "ikj");
+/home/claude/matmul-assignment2/src/c/matmul2.c:348:72: missed: statement clobbers memory: _12 = strcmp (method_109, "blocked");
+/home/claude/matmul-assignment2/src/c/matmul2.c:349:21: missed: statement clobbers memory: _13 = strcmp (method_109, "csr");
+/home/claude/matmul-assignment2/src/c/matmul2.c:349:47: missed: statement clobbers memory: _14 = strcmp (method_109, "csrfile");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.5_16, 2, "unknown method %s\n", method_109);
+/home/claude/matmul-assignment2/src/c/matmul2.c:351:10: missed: statement clobbers memory: _17 = strcmp (method_109, "blocked");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "META method=%s n=%zu reps=%d warmup=%d batch=%ld bs=%zu\n", method_109, n_111, _189, _187, _191, iftmp.2_84);
+/home/claude/matmul-assignment2/src/c/matmul2.c:354:5: missed: statement clobbers memory: fflush (stdout.7_19);
+/home/claude/matmul-assignment2/src/c/matmul2.c:388:23: missed: statement clobbers memory: _43 = strcmp (method_109, "csr");
+/home/claude/matmul-assignment2/src/c/matmul2.c:398:13: missed: statement clobbers memory: A = read_csr (pretmp_294); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:399:13: missed: statement clobbers memory: B = read_csr (_48); [return slot optimization]
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.15_51, 2, "operand size mismatch\n");
+/home/claude/matmul-assignment2/src/c/matmul2.c:392:14: missed: statement clobbers memory: da_120 = read_dense (pretmp_294, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:393:14: missed: statement clobbers memory: db_122 = read_dense (_46, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:394:13: missed: statement clobbers memory: A = dense_to_csr (da_120, n_111); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:395:13: missed: statement clobbers memory: B = dense_to_csr (db_122, n_111); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:396:9: missed: statement clobbers memory: csr_free (&A);
+/home/claude/matmul-assignment2/src/c/matmul2.c:396:23: missed: statement clobbers memory: csr_free (&B);
+/home/claude/matmul-assignment2/src/c/matmul2.c:403:5: missed: statement clobbers memory: _52 = proc_status_kb ("VmRSS");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "RSS_AFTER_LOAD_KB %ld\n", _52);
+/home/claude/matmul-assignment2/src/c/matmul2.c:404:5: missed: statement clobbers memory: fflush (stdout.16_53);
+/home/claude/matmul-assignment2/src/c/matmul2.c:410:26: missed: statement clobbers memory: c0_132 = now_ns ();
+/home/claude/matmul-assignment2/src/c/matmul2.c:411:17: missed: statement clobbers memory: A = dense_to_csr (da_77, n_74); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:412:17: missed: statement clobbers memory: B = dense_to_csr (db_78, n_74); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:413:26: missed: statement clobbers memory: c1_136 = now_ns ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "NNZ %lld %lld\n", _57, _56);
+/home/claude/matmul-assignment2/src/c/matmul2.c:416:86: missed: statement clobbers memory: fflush (stdout.17_58);
+/home/claude/matmul-assignment2/src/c/matmul2.c:53:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:5: missed: statement clobbers memory: free (C$ptr_79);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:19: missed: statement clobbers memory: free (C$idx_240);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:33: missed: statement clobbers memory: free (C$val_255);
+/home/claude/matmul-assignment2/src/c/matmul2.c:420:17: missed: statement clobbers memory: C = csr_multiply (&A, &B); [return slot optimization]
+/home/claude/matmul-assignment2/src/c/matmul2.c:53:5: missed: statement clobbers memory: clock_gettime (1, &ts);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%s %d %.9e %.17g conv_s=%.9e nnz_c=%lld\n", iftmp.19_90, iftmp.18_280, _65, s_344, conv_s_80, C$nnz_292);
+/home/claude/matmul-assignment2/src/c/matmul2.c:426:9: missed: statement clobbers memory: fflush (stdout.20_66);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "ROWCHK %lld %lld %.17g\n", i_243, _263, s_348);
+/home/claude/matmul-assignment2/src/c/matmul2.c:332:5: missed: statement clobbers memory: fflush (stdout.64_266);
+/home/claude/matmul-assignment2/src/c/matmul2.c:429:13: missed: statement clobbers memory: _68 = proc_status_kb ("VmHWM");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "VMHWM_KB %ld\n", _68);
+/home/claude/matmul-assignment2/src/c/matmul2.c:430:13: missed: statement clobbers memory: fflush (stdout.21_69);
+/home/claude/matmul-assignment2/src/c/matmul2.c:211:15: missed: statement clobbers memory: f_267 = fopen (iftmp.1_83, "wb");
+/home/claude/matmul-assignment2/src/c/matmul2.c:214:14: missed: statement clobbers memory: _270 = fwrite ("CSR1", 1, 4, f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:214:46: missed: statement clobbers memory: _271 = fwrite (&hdr, 8, 2, f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:215:14: missed: statement clobbers memory: _276 = fwrite (C$ptr_260, 8, _274, f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:216:14: missed: statement clobbers memory: _283 = fwrite (C$idx_275, 4, _281, f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:218:5: missed: statement clobbers memory: fclose (f_234);
+/home/claude/matmul-assignment2/src/c/matmul2.c:217:14: missed: statement clobbers memory: _287 = fwrite (C$val_286, 8, _281, f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:218:5: missed: statement clobbers memory: fclose (f_267);
+/home/claude/matmul-assignment2/src/c/matmul2.c:433:27: missed: statement clobbers memory: csr_free (&A);
+/home/claude/matmul-assignment2/src/c/matmul2.c:433:41: missed: statement clobbers memory: csr_free (&B);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:5: missed: statement clobbers memory: free (C$ptr_260);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:19: missed: statement clobbers memory: free (C$idx_275);
+/home/claude/matmul-assignment2/src/c/matmul2.c:157:33: missed: statement clobbers memory: free (C$val_286);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "DONE\n");
+/home/claude/matmul-assignment2/src/c/matmul2.c:437:5: missed: statement clobbers memory: fflush (stdout.23_73);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.22_71, 2, "cannot write dump\n");
+/home/claude/matmul-assignment2/src/c/matmul2.c:357:21: missed: statement clobbers memory: a_157 = read_dense (_20, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:358:21: missed: statement clobbers memory: b_159 = read_dense (_21, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:359:21: missed: statement clobbers memory: c_161 = xmalloc (_23, "dense C");
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:59:10: missed: statement clobbers memory: __builtin_memset (c_161, 0, _23);
+/home/claude/matmul-assignment2/src/c/matmul2.c:361:9: missed: statement clobbers memory: _25 = proc_status_kb ("VmRSS");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "RSS_AFTER_LOAD_KB %ld\n", _25);
+/home/claude/matmul-assignment2/src/c/matmul2.c:362:9: missed: statement clobbers memory: fflush (stdout.8_26);
+/home/claude/matmul-assignment2/src/c/matmul2.c:364:26: missed: statement clobbers memory: t0_172 = now_ns ();
+/home/claude/matmul-assignment2/src/c/matmul2.c:366:22: missed: statement clobbers memory: _27 = strcmp (method_109, "ijk");
+/home/claude/matmul-assignment2/src/c/matmul2.c:367:27: missed: statement clobbers memory: _28 = strcmp (method_109, "ikj");
+/home/claude/matmul-assignment2/src/c/matmul2.c:368:22: missed: statement clobbers memory: mul_blocked (a_157, b_159, c_161, n_111, iftmp.2_84);
+/home/claude/matmul-assignment2/src/c/matmul2.c:367:50: missed: statement clobbers memory: mul_ikj (a_157, b_159, c_161, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:366:45: missed: statement clobbers memory: mul_ijk (a_157, b_159, c_161, n_111);
+/home/claude/matmul-assignment2/src/c/matmul2.c:370:26: missed: statement clobbers memory: t1_174 = now_ns ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "%s %d %.9e %.17g\n", iftmp.10_88, iftmp.9_279, _33, s_341);
+/home/claude/matmul-assignment2/src/c/matmul2.c:373:13: missed: statement clobbers memory: fflush (stdout.11_34);
+/home/claude/matmul-assignment2/src/c/matmul2.c:375:9: missed: statement clobbers memory: _36 = proc_status_kb ("VmHWM");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "VMHWM_KB %ld\n", _36);
+/home/claude/matmul-assignment2/src/c/matmul2.c:376:9: missed: statement clobbers memory: fflush (stdout.12_37);
+/home/claude/matmul-assignment2/src/c/matmul2.c:378:23: missed: statement clobbers memory: f_167 = fopen (iftmp.1_83, "wb");
+/home/claude/matmul-assignment2/src/c/matmul2.c:379:23: missed: statement clobbers memory: _39 = fwrite (c_161, 8, powmult_328, f_167);
+/home/claude/matmul-assignment2/src/c/matmul2.c:380:13: missed: statement clobbers memory: fclose (f_167);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:10: missed: statement clobbers memory: __printf_chk (2, "DONE\n");
+/home/claude/matmul-assignment2/src/c/matmul2.c:383:9: missed: statement clobbers memory: fflush (stdout.14_42);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.13_41, 2, "cannot write dump\n");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.6_18, 2, "blocked needs bs >= 1\n");
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:79:10: missed: statement clobbers memory: __fprintf_chk (stderr.0_2, 2, "usage: %s method n reps warmup batch A B dumpC|- [bs]\n", _1);
+/home/claude/matmul-assignment2/src/c/matmul2.c:213:13: optimized: basic block part vectorized using 16 byte vectors

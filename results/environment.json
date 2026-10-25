@@ -1,0 +1,38 @@
+{
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "logical_processors": 2,
+  "sockets": "1",
+  "cores_per_socket": "2",
+  "threads_per_core": "1",
+  "physical_cores": 2,
+  "hypervisor": "KVM",
+  "virtualization": "full",
+  "cache_L1d": "64 KiB (2 instances)",
+  "cache_L2": "2 MiB (2 instances)",
+  "cache_L3": "33 MiB (1 instance)",
+  "cache_sysfs_cpu0": "L1 Data 32K line=64B\nL1 Instruction 32K line=64B\nL2 Unified 1024K line=64B\nL3 Unified 33792K line=64B",
+  "cpu_flags_of_interest": [
+    "sse2",
+    "sse4_2",
+    "avx",
+    "avx2",
+    "avx512f",
+    "fma"
+  ],
+  "ram_total_MiB": 8028,
+  "swap_total_MiB": 0,
+  "os": "Ubuntu 24.04.5 LTS",
+  "kernel": "6.18.44-fc-v153",
+  "cpu_frequency_governor": "not exposed (virtual machine)",
+  "cpu_affinity_used": "none (processes not pinned)",
+  "python": {
+    "version": "3.13.16",
+    "implementation": "CPython",
+    "numpy_version_(input_generation_and_reference_only)": "2.5.3",
+    "scipy_version_(sparse_reference_only)": "1.18.1"
+  },
+  "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "c_flags_primary": "-O2 -std=c11 -ffp-contract=off  (no -march=native; no -ffast-math; single thread)",
+  "threads_used_by_each_implementation": 1,
+  "note_threads": "All multiplication kernels are single-threaded C code. NumPy / SciPy are used only outside the timed regions (input generation and validation)."
+}
