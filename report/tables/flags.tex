@@ -1,0 +1,12 @@
+\begin{tabular}{rlrrrr}
+\toprule
+$n$ & method & \texttt{-O2} (s) & \texttt{-O2 -funroll-loops} & \texttt{-O3} & \texttt{-O3 -march=native} \\
+\midrule
+1000 & blocked & 0.865 & 0.495 (1.75$\times$) & 0.242 (3.57$\times$) & 0.232 (3.73$\times$) \\
+1000 & ijk & 1.89 & 1.60 (1.18$\times$) & 1.69 (1.11$\times$) & 1.58 (1.19$\times$) \\
+1000 & ikj & 0.833 & 0.492 (1.69$\times$) & 0.341 (2.44$\times$) & 0.283 (2.94$\times$) \\
+2000 & blocked & 5.99 & 4.02 (1.49$\times$) & 2.59 (2.31$\times$) & 1.83 (3.27$\times$) \\
+2000 & ijk & 36.6 & 33.8 (1.08$\times$) & 37.3 (0.98$\times$) & 36.1 (1.02$\times$) \\
+2000 & ikj & 9.08 & 8.67 (1.05$\times$) & 6.20 (1.46$\times$) & 5.84 (1.55$\times$) \\
+\bottomrule
+\end{tabular}

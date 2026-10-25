@@ -1,0 +1,9 @@
+\begin{tabular}{lccc}
+\toprule
+Method & $n=100$--$500$ & $n=1000$--$3000$ & $n\ge1000$ (all feasible) \\
+\midrule
+baseline i-j-k & $3.09 \pm 0.68$ (3) & $4.11 \pm 0.97$ (6) & $4.11 \pm 0.97$ (6) \\
+i-k-j (loop reordering) & $3.18 \pm 1.23$ (3) & $3.56 \pm 0.28$ (6) & $3.26 \pm 0.19$ (9) \\
+blocked i-k-j (tile 96) & $3.05 \pm 1.45$ (3) & $3.09 \pm 0.10$ (6) & $3.04 \pm 0.07$ (9) \\
+\bottomrule
+\end{tabular}

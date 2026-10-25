@@ -1,0 +1,16 @@
+\begin{tabular}{lrr}
+\toprule
+Group of tests & Checks & Passed \\
+\midrule
+Dense: known answers (scalar, 2$\times$2, 3$\times$3, zero, identity, all-ones, integer) & 117 & 117 \\
+Dense: random matrices vs NumPy ($n=5,\dots,129$) & 78 & 78 \\
+Dense: bit-for-bit equality of all methods and 13 tile sizes & 13 & 13 \\
+Dense: repeated runs give identical checksums & 7 & 7 \\
+Sparse: edge cases (empty, identity, diagonal, empty row/column, $1\times1$, fully dense) & 64 & 64 \\
+Sparse: random and banded vs SciPy (pattern, values), CSR sorted, csr$=$csrfile & 72 & 72 \\
+Sparse: densified result bit-for-bit equal to the dense methods & 24 & 24 \\
+Sparse: conversion, spot-check rows, repeated runs & 2 & 2 \\
+\midrule
+\textbf{Total} & \textbf{377} & \textbf{377} \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,9 @@
+\begin{tabular}{lrrlrrl}
+\toprule
+Method & Largest feasible $n$ & Largest attempted $n$ & Failures (limit 300 s) & Time at largest ok (s) & Reps & Not attempted \\
+\midrule
+baseline i-j-k & 3000 & 4000 & 4000: timeout & 190 & 2 & 5000, 6000, 8000 \\
+i-k-j (loop reordering) & 6000 & 8000 & 8000: timeout & 253 & 2 & none \\
+blocked i-k-j (tile 96) & 6000 & 8000 & 8000: timeout & 183 & 2 & none \\
+\bottomrule
+\end{tabular}

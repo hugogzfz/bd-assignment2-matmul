@@ -1,0 +1,9 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Peak RSS at $n=100$ (MiB) & Growth (bytes per $n^2$, $n\ge1000$) & Largest $n$ & Peak RSS there (MiB) & $24n^2$ model (MiB) \\
+\midrule
+baseline i-j-k & 2.00 & 24.00 & 3000 & 207.8 & 206.0 \\
+i-k-j (loop reordering) & 2.00 & 24.00 & 6000 & 825.8 & 824.0 \\
+blocked i-k-j (tile 96) & 2.00 & 24.00 & 6000 & 825.8 & 824.0 \\
+\bottomrule
+\end{tabular}

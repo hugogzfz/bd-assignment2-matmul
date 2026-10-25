@@ -1,0 +1,9 @@
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Method & Proc. & P1 (s) & P2 (s) & P3 (s) & P4 (s) & P5 (s) & P6 (s) & Spread (\%) & Within IQR (\%) \\
+\midrule
+baseline i-j-k & 6 & 1.60 & 1.65 & 2.12 & 1.75 & 1.65 & 1.54 & 35.1 & 9.23 \\
+i-k-j (loop reordering) & 6 & 0.690 & 0.724 & 0.753 & 0.795 & 0.738 & 0.728 & 14.3 & 11.1 \\
+blocked i-k-j (tile 96) & 6 & 0.695 & 0.758 & 0.775 & 0.789 & 0.734 & 0.752 & 12.5 & 14.0 \\
+\bottomrule
+\end{tabular}
